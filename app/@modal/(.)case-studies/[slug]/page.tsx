@@ -1,6 +1,6 @@
-import { notFound } from "next/navigation";
 import { getCaseStudy } from "@/lib/markdown";
 import { CaseStudyDrawerClient } from "@/components/case-study-drawer-client";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: Promise<{ slug: string }>;
