@@ -9,10 +9,10 @@ export default function Home() {
     <div className="container mx-auto px-4 py-16">
       <section className="max-w-3xl mb-24">
         <h1 className="text-5xl font-bold mb-6">
-          Hi, I'm Josh McCray
+          Hi, I&apos;m Josh McCray
         </h1>
         <p className="text-xl text-gray-600 mb-8">
-          I'm a product designer focused on creating intuitive, user-centered experiences.
+          I&apos;m a product designer focused on creating intuitive, user-centered experiences.
           I combine design thinking with technical expertise to build products that people love.
         </p>
         <div className="flex gap-4">
