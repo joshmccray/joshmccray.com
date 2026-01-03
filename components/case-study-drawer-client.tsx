@@ -1,0 +1,80 @@
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { CaseStudyContent } from "./case-study-content";
+import type { CaseStudy } from "@/lib/markdown";
+
+interface CaseStudyDrawerClientProps {
+  caseStudy: CaseStudy;
+}
+
+export function CaseStudyDrawerClient({ caseStudy }: CaseStudyDrawerClientProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Lock body scroll when drawer is open
+    document.body.style.overflow = "hidden";
+
+    // Handle ESC key to close drawer
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        router.back();
+      }
+    };
+
+    window.addEventListener("keydown", handleEsc);
+
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, [router]);
+
+  const handleClose = () => {
+    router.back();
+  };
+
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Only close if clicking the backdrop itself, not the drawer content
+    if (e.target === e.currentTarget) {
+      handleClose();
+    }
+  };
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-end bg-black/50 backdrop-blur-sm transition-opacity duration-300"
+      onClick={handleBackdropClick}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="drawer-title"
+    >
+      <div className="relative h-full w-full bg-white shadow-2xl transition-transform duration-300 ease-out md:w-[90%] md:max-w-4xl">
+        {/* Close button */}
+        <button
+          onClick={handleClose}
+          className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-colors hover:bg-gray-200 hover:text-gray-900"
+          aria-label="Close drawer"
+        >
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        {/* Scrollable content */}
+        <div className="h-full overflow-y-auto px-4 py-16 md:px-8">
+          <CaseStudyContent caseStudy={caseStudy} />
+        </div>
+      </div>
+    </div>
+  );
+}
