@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getAllBlogPosts, getAllCaseStudies } from "@/lib/markdown";
 import { CaseStudyModalWrapper } from "@/components/case-study-modal-wrapper";
 
@@ -52,7 +53,14 @@ export default function Home() {
               >
                 <article className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
                   {study.coverImage && (
-                    <div className="aspect-video bg-gray-100"></div>
+                    <div className="aspect-video bg-gray-100 relative">
+                      <Image
+                        src={study.coverImage}
+                        alt={study.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                   )}
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">

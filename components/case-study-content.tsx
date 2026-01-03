@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import type { CaseStudy } from "@/lib/markdown";
 
@@ -46,7 +47,15 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
       </div>
 
       {caseStudy.coverImage && (
-        <div className="aspect-video bg-gray-100 rounded-lg mb-12"></div>
+        <div className="aspect-video bg-gray-100 rounded-lg mb-12 relative overflow-hidden">
+          <Image
+            src={caseStudy.coverImage}
+            alt={caseStudy.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
       )}
 
       <div className="prose prose-lg max-w-none">
