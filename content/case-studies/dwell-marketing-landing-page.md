@@ -5,6 +5,7 @@ client: "Dwell"
 role: "Product Design, Web Development"
 excerpt: "Designing and developing a high-converting marketing landing page for Dwell's audio Bible app, highlighting premium features while driving user acquisition."
 tags: ["Marketing", "Landing Page", "Product Design", "Conversion Optimization"]
+coverImage: "/case-studies/dwell-marketing-landing-page/mobile.png"
 liveUrl: ""
 ---
 

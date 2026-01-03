@@ -5,6 +5,7 @@ client: "Dwell"
 role: "Design, Development"
 excerpt: "A comprehensive Advent campaign including landing pages, email series, and promotional materials to drive app engagement during the Christmas season."
 tags: ["Marketing", "Email Campaign", "Web Development", "Seasonal Campaign"]
+coverImage: "/case-studies/dwell-advent-campaign/branding.png"
 liveUrl: ""
 ---
 

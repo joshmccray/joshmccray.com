@@ -5,6 +5,7 @@ client: "Dwell"
 role: "Design, Web Development"
 excerpt: "Designing and building a landing page to launch Dwell's affiliate program, connecting content creators with partnership opportunities."
 tags: ["Landing Page", "Web Development", "Affiliate Marketing", "Partnership Program"]
+coverImage: "/case-studies/dwell-affiliates-landing-page/hero.png"
 liveUrl: "https://dwellapp.io/affiliate"
 ---
 

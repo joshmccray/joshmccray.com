@@ -5,6 +5,7 @@ client: "Compassion International"
 role: "UX Design"
 excerpt: "Modernizing Compassion's checkout experience by implementing UX best practices and integrating new brand elements, reducing friction while maintaining high conversion rates."
 tags: ["UX Design", "E-commerce", "Conversion Optimization", "Design Systems"]
+coverImage: "/case-studies/compassion-checkout-redesign/header.png"
 liveUrl: ""
 ---
 

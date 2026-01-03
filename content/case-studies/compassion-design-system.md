@@ -5,6 +5,7 @@ client: "Compassion International"
 role: "Design Token Architecture, Design"
 excerpt: "Building a headless, multi-brand design system powered by design tokens to serve a global organization with diverse technology stacks."
 tags: ["Design Systems", "Design Tokens", "Theming", "Multi-Brand"]
+coverImage: "/case-studies/compassion-design-system/hero.png"
 liveUrl: ""
 ---
 
@@ -32,6 +33,8 @@ This is where theming magic happens. Using names like `background-color-primary`
 Component-specific values drawn from semantic tokens with consistent naming conventions, making it easy for developers to implement designs correctly every time.
 
 ## The Power of Theming
+
+![Design System Theming](/case-studies/compassion-design-system/theming.gif)
 
 This architecture enables Compassion to:
 - Serve different brands with the same component library

@@ -5,6 +5,7 @@ client: "Compassion International"
 role: "Product Design, Prototyping"
 excerpt: "An AI-powered, experiential marketing tool that transforms children's illustrations into personalized tapestries, strengthening connections between sponsors and the children they support."
 tags: ["Product Design", "AI", "Experiential Marketing", "Prototyping"]
+coverImage: "/case-studies/tapestry-builder/hero.png"
 liveUrl: ""
 ---
 

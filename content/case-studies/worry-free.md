@@ -5,6 +5,7 @@ client: "Jockey"
 role: "Creative Direction, Design, Illustration, Development"
 excerpt: "End-to-end creative direction for Jockey's specialized period underwear line, from branding and custom illustrations to fully coded landing pages."
 tags: ["Branding", "Illustration", "Web Development", "Marketing"]
+coverImage: "/case-studies/worry-free/mockup-1.png"
 liveUrl: "https://www.jockey.com/worryfree-period"
 ---
 
