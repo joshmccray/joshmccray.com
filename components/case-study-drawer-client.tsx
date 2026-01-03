@@ -57,7 +57,7 @@ export function CaseStudyDrawerClient({ caseStudy }: CaseStudyDrawerClientProps)
       aria-labelledby="drawer-title"
     >
       <div
-        className={`relative h-[90vh] w-full bg-white shadow-2xl transition-transform duration-500 ease-out ${
+        className={`relative h-[90vh] w-full bg-white rounded-t-2xl shadow-2xl transition-transform duration-500 ease-out ${
           isAnimating ? "translate-y-0" : "translate-y-full"
         }`}
       >
