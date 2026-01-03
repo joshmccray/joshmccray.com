@@ -46,6 +46,11 @@ export function CaseStudyDrawerClient({ caseStudy }: CaseStudyDrawerClientProps)
     }
   };
 
+  // Don't render until mounted on client to avoid hydration issues
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-300"
@@ -54,10 +59,7 @@ export function CaseStudyDrawerClient({ caseStudy }: CaseStudyDrawerClientProps)
       aria-modal="true"
       aria-labelledby="drawer-title"
     >
-      <div
-        className="relative h-[90vh] w-full bg-white rounded-t-2xl shadow-2xl animate-in slide-in-from-bottom duration-500"
-        suppressHydrationWarning
-      >
+      <div className="relative h-[90vh] w-full bg-white rounded-t-2xl shadow-2xl animate-in slide-in-from-bottom duration-500">
         {/* Close button */}
         <button
           onClick={handleClose}
