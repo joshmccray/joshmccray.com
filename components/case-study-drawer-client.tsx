@@ -53,13 +53,17 @@ export function CaseStudyDrawerClient({ caseStudy }: CaseStudyDrawerClientProps)
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-300"
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-300 opacity-0"
+      style={{ animation: 'fadeIn 300ms ease-out forwards' }}
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
       aria-labelledby="drawer-title"
     >
-      <div className="relative h-[90vh] w-full bg-white rounded-t-2xl shadow-2xl animate-in slide-in-from-bottom duration-500">
+      <div
+        className="relative h-[90vh] w-full bg-white rounded-t-2xl shadow-2xl"
+        style={{ animation: 'slideUp 500ms ease-out forwards' }}
+      >
         {/* Close button */}
         <button
           onClick={handleClose}
