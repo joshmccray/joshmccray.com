@@ -1,16 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { CaseStudyContent } from "./case-study-content";
 import type { CaseStudy } from "@/lib/markdown";
 
 interface CaseStudyDrawerClientProps {
   caseStudy: CaseStudy;
+  onClose: () => void;
 }
 
-export function CaseStudyDrawerClient({ caseStudy }: CaseStudyDrawerClientProps) {
-  const router = useRouter();
+export function CaseStudyDrawerClient({ caseStudy, onClose }: CaseStudyDrawerClientProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -23,7 +22,7 @@ export function CaseStudyDrawerClient({ caseStudy }: CaseStudyDrawerClientProps)
     // Handle ESC key to close drawer
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        router.back();
+        onClose();
       }
     };
 
@@ -33,10 +32,10 @@ export function CaseStudyDrawerClient({ caseStudy }: CaseStudyDrawerClientProps)
       document.body.style.overflow = "unset";
       window.removeEventListener("keydown", handleEsc);
     };
-  }, [router]);
+  }, [onClose]);
 
   const handleClose = () => {
-    router.back();
+    onClose();
   };
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {

@@ -1,12 +1,15 @@
 import Link from "next/link";
 import { getAllBlogPosts, getAllCaseStudies } from "@/lib/markdown";
+import { CaseStudyModalWrapper } from "@/components/case-study-modal-wrapper";
 
 export default function Home() {
-  const caseStudies = getAllCaseStudies().slice(0, 3);
+  const allCaseStudies = getAllCaseStudies();
+  const caseStudies = allCaseStudies.slice(0, 3);
   const blogPosts = getAllBlogPosts().slice(0, 3);
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <CaseStudyModalWrapper caseStudies={allCaseStudies}>
+      <div className="container mx-auto px-4 py-16">
       <section className="max-w-3xl mb-24">
         <h1 className="text-5xl font-bold mb-6">
           Hi, I&apos;m Josh McCray
@@ -43,7 +46,8 @@ export default function Home() {
             {caseStudies.map((study) => (
               <Link
                 key={study.slug}
-                href={`/case-studies/${study.slug}`}
+                href={`/?modal=${study.slug}`}
+                scroll={false}
                 className="group"
               >
                 <article className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
@@ -98,6 +102,7 @@ export default function Home() {
           </div>
         </section>
       )}
-    </div>
+      </div>
+    </CaseStudyModalWrapper>
   );
 }

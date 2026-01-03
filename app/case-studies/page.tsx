@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllCaseStudies } from "@/lib/markdown";
+import { CaseStudyModalWrapper } from "@/components/case-study-modal-wrapper";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,7 +12,8 @@ export default function CaseStudiesPage() {
   const caseStudies = getAllCaseStudies();
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <CaseStudyModalWrapper caseStudies={caseStudies}>
+      <div className="container mx-auto px-4 py-16">
       <div className="max-w-3xl mb-16">
         <h1 className="text-5xl font-bold mb-6">Case Studies</h1>
         <p className="text-xl text-gray-600">
@@ -31,7 +33,8 @@ export default function CaseStudiesPage() {
           {caseStudies.map((study) => (
             <Link
               key={study.slug}
-              href={`/case-studies/${study.slug}`}
+              href={`/case-studies?modal=${study.slug}`}
+              scroll={false}
               className="group"
             >
               <article className="border rounded-lg overflow-hidden hover:shadow-xl transition-all">
@@ -67,6 +70,7 @@ export default function CaseStudiesPage() {
           ))}
         </div>
       )}
-    </div>
+      </div>
+    </CaseStudyModalWrapper>
   );
 }
