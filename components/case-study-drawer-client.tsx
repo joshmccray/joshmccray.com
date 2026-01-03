@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { CaseStudyContent } from "./case-study-content";
 import type { CaseStudy } from "@/lib/markdown";
@@ -11,8 +11,12 @@ interface CaseStudyDrawerClientProps {
 
 export function CaseStudyDrawerClient({ caseStudy }: CaseStudyDrawerClientProps) {
   const router = useRouter();
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
+    // Trigger animation after mount
+    setTimeout(() => setIsAnimating(true), 10);
+
     // Lock body scroll when drawer is open
     document.body.style.overflow = "hidden";
 
@@ -44,13 +48,19 @@ export function CaseStudyDrawerClient({ caseStudy }: CaseStudyDrawerClientProps)
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-end bg-black/50 backdrop-blur-sm transition-opacity duration-300"
+      className={`fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
+        isAnimating ? "opacity-100" : "opacity-0"
+      }`}
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
       aria-labelledby="drawer-title"
     >
-      <div className="relative h-full w-full bg-white shadow-2xl transition-transform duration-300 ease-out md:w-[90%] md:max-w-4xl">
+      <div
+        className={`relative h-[90vh] w-full bg-white shadow-2xl transition-transform duration-500 ease-out ${
+          isAnimating ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
         {/* Close button */}
         <button
           onClick={handleClose}
