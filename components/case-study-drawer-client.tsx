@@ -11,11 +11,11 @@ interface CaseStudyDrawerClientProps {
 
 export function CaseStudyDrawerClient({ caseStudy }: CaseStudyDrawerClientProps) {
   const router = useRouter();
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Trigger animation after mount
-    setTimeout(() => setIsAnimating(true), 10);
+    // Set mounted to true after hydration
+    setMounted(true);
 
     // Lock body scroll when drawer is open
     document.body.style.overflow = "hidden";
@@ -48,18 +48,15 @@ export function CaseStudyDrawerClient({ caseStudy }: CaseStudyDrawerClientProps)
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
-        isAnimating ? "opacity-100" : "opacity-0"
-      }`}
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-300"
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
       aria-labelledby="drawer-title"
     >
       <div
-        className={`relative h-[90vh] w-full bg-white rounded-t-2xl shadow-2xl transition-transform duration-500 ease-out ${
-          isAnimating ? "translate-y-0" : "translate-y-full"
-        }`}
+        className="relative h-[90vh] w-full bg-white rounded-t-2xl shadow-2xl animate-in slide-in-from-bottom duration-500"
+        suppressHydrationWarning
       >
         {/* Close button */}
         <button
