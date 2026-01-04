@@ -39,6 +39,10 @@ Created illustrated diagrams explaining:
 
 These weren't just pretty graphics—they were educational tools that built confidence in the product.
 
+![Absorption Level Icons](/case-studies/worry-free/absorption-icons.png)
+
+![Layering System Illustration](/case-studies/worry-free/layering-system.png)
+
 ### Emotional Exploration
 
 Developed an alternate design direction "focused on emotion" rather than technical specifications. This version emphasized:
@@ -47,6 +51,10 @@ Developed an alternate design direction "focused on emotion" rather than technic
 - Freedom and movement
 - Connection to the Jockey brand heritage
 
+![Emotional Design Direction](/case-studies/worry-free/emotional.png)
+
+![Design Exploration](/case-studies/worry-free/exploration.png)
+
 ### Web Development
 
 Designed and coded responsive landing pages that:
@@ -54,6 +62,8 @@ Designed and coded responsive landing pages that:
 - Guided users through the decision-making process
 - Maintained brand consistency with Jockey's main site
 - Performed well on mobile and desktop
+
+![Landing Page Design](/case-studies/worry-free/mockup-2.png)
 
 ## Deliverables
 

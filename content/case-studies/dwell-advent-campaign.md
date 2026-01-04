@@ -31,6 +31,8 @@ Built a dedicated landing page (Ruby on Rails) focused on email collection:
 - Simple email capture form
 - Immediate PDF delivery upon signup
 
+![Advent Landing Page](/case-studies/dwell-advent-campaign/landing-page.png)
+
 ### Four-Week Email Series
 
 Designed and developed an automated email sequence that:
@@ -45,6 +47,8 @@ Each email included:
 - Clear calls-to-action for app downloads
 - Shareable content for social media
 
+![Email Design](/case-studies/dwell-advent-campaign/email-design.png)
+
 ### Church Partnership Materials
 
 Created promotional slides for church accounts, enabling:
@@ -52,12 +56,18 @@ Created promotional slides for church accounts, enabling:
 - Consistent messaging across partners
 - Simple participation path for church members
 
+![Church Promotional Materials](/case-studies/dwell-advent-campaign/church-promo.png)
+
 ### Secondary Landing Pages
 
 Developed two additional landing pages featuring:
 - Campaign visuals with seasonal themes
 - Specific promotional offers
 - Alternative entry points for different audience segments
+
+![Offer Landing Page 1](/case-studies/dwell-advent-campaign/offer-page-1.png)
+
+![Offer Landing Page 2](/case-studies/dwell-advent-campaign/offer-page-2.png)
 
 ## Technical Implementation
 

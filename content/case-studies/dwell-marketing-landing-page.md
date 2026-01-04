@@ -47,12 +47,16 @@ Used device mockups and interface previews to:
 - Build trust through transparency
 - Create visual interest and break up text
 
+![Desktop Landing Page View](/case-studies/dwell-marketing-landing-page/desktop-1.png)
+
 ### Responsive Excellence
 
 Ensured the experience worked beautifully on:
 - **Mobile** - Where most users discover apps
 - **Tablet** - Optimal for reading longer content
 - **Desktop** - For users researching before downloading
+
+![Feature Showcase](/case-studies/dwell-marketing-landing-page/desktop-2.png)
 
 ## Technical Implementation
 

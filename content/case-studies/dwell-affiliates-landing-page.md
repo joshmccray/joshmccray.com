@@ -45,6 +45,8 @@ Organized content in a logical flow:
 5. **Who It's For** - Ideal partner profiles
 6. **Sign Up CTA** - Direct path to enrollment
 
+![Landing Page Overview](/case-studies/dwell-affiliates-landing-page/details-1.png)
+
 ### Visual Design
 
 Created a cohesive visual experience using:
@@ -53,6 +55,8 @@ Created a cohesive visual experience using:
 - **Layout Compositions** - Varied section designs to maintain engagement
 - **Color Strategy** - Dwell brand colors with strategic accents
 
+![Visual Design Details](/case-studies/dwell-affiliates-landing-page/details-2.png)
+
 ### Trust Building
 
 Incorporated elements to build credibility:
@@ -60,6 +64,8 @@ Incorporated elements to build credibility:
 - Clear terms and conditions
 - Professional presentation
 - Testimonials or partner examples (where available)
+
+![Program Details](/case-studies/dwell-affiliates-landing-page/details-3.png)
 
 ## Technical Implementation
 

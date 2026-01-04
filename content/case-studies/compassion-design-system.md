@@ -32,6 +32,10 @@ This is where theming magic happens. Using names like `background-color-primary`
 ### 3. Component Tokens
 Component-specific values drawn from semantic tokens with consistent naming conventions, making it easy for developers to implement designs correctly every time.
 
+![Design Token Structure](/case-studies/compassion-design-system/tokens.png)
+
+![Component Implementation](/case-studies/compassion-design-system/components.png)
+
 ## The Power of Theming
 
 ![Design System Theming](/case-studies/compassion-design-system/theming.gif)
@@ -52,6 +56,8 @@ This architecture enables Compassion to:
 ## Adoption Strategy
 
 Successful adoption requires more than great design—it requires relationships. I facilitate onboarding for new teams, working with Compassion's global partners to customize system implementation. We even created stickers to build awareness and excitement around the system.
+
+![Design System Stickers](/case-studies/compassion-design-system/sticker.png)
 
 ## Key Learnings
 

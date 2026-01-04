@@ -38,9 +38,15 @@ Created a versatile card component accommodating multiple donation types:
 
 The design abstracts internal terminology, speaking in user-friendly language while maintaining system flexibility on the backend.
 
+![Donation Card Exploration](/case-studies/compassion-checkout-redesign/card-exploration-1.png)
+
+![Card Design Variations](/case-studies/compassion-checkout-redesign/card-exploration-2.png)
+
 ### Order Summary Drawer
 
 Standardized cart item cards into a cohesive summary interface. We tested with maximum add-on scenarios to ensure the design held up under stress—because real users don't add just one item.
+
+![Order Summary Drawer](/case-studies/compassion-checkout-redesign/donation-drawer.png)
 
 ### Secondary Actions Drawer
 
@@ -50,6 +56,8 @@ Moved secondary actions (adding payments, signing in, editing amounts) into a dr
 - Created clearer visual hierarchy
 - Made mobile interactions more intuitive
 
+![Secondary Actions Interface](/case-studies/compassion-checkout-redesign/secondary-actions.png)
+
 ## The Process
 
 I refined inherited business requirements and wireframes, asking critical questions:
@@ -57,6 +65,10 @@ I refined inherited business requirements and wireframes, asking critical questi
 - What new dependencies have emerged?
 - How should we test these changes?
 - What metrics define success?
+
+![Checkout Flow - Part 1](/case-studies/compassion-checkout-redesign/flow-1.png)
+
+![Checkout Flow - Part 2](/case-studies/compassion-checkout-redesign/flow-2.png)
 
 ## Results
 

@@ -32,13 +32,21 @@ The project commenced with comprehensive ideation incorporating:
 - **Competitive research** analyzing similar creative tools
 - **Wireframing** to explore interaction patterns
 
+![Ideation and Research](/case-studies/tapestry-builder/ideation.png)
+
+![Wireframing and Concepts](/case-studies/tapestry-builder/wireframes.png)
+
 While mobile-first design was prioritized for prototyping and testing, responsive adaptations for desktop viewing were also validated to ensure flexibility across devices.
+
+![Responsive Design Testing](/case-studies/tapestry-builder/desktop-testing.png)
 
 ### Minimum Lovable Product
 
 Budget constraints and prototype testing complexities led us to develop an interactive coded version rather than relying on Figma prototypes. This approach had a key innovation:
 
 Instead of building actual AI functionality for the prototype, we created an extensive question library and branching narrative logic to simulate personalization. This allowed us to test the experience and value proposition without the development overhead of training AI models.
+
+![Interactive Prototype](/case-studies/tapestry-builder/prototype.png)
 
 ## Design Decisions
 
