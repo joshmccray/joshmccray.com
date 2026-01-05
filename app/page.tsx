@@ -11,25 +11,25 @@ export default function Home() {
 
   return (
     <CaseStudyModalWrapper caseStudies={allCaseStudies}>
-      <div className="container mx-auto px-4 py-16">
-      <section className="max-w-3xl mb-24">
-        <h1 className="text-5xl font-bold mb-6">
+      <div className="container mx-auto px-4 py-20">
+      <section className="max-w-3xl mb-32">
+        <h1 className="text-6xl font-bold mb-8 tracking-tight">
           Hi, I&apos;m Josh McCray
         </h1>
-        <p className="text-xl text-gray-600 mb-8">
+        <p className="text-xl text-gray-600 mb-10 leading-relaxed">
           I&apos;m a product designer focused on creating intuitive, user-centered experiences.
           I combine design thinking with technical expertise to build products that people love.
         </p>
         <div className="flex gap-4">
           <Link
             href="/case-studies"
-            className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+            className="bg-[var(--accent)] text-white px-6 py-3 rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 shadow-sm hover:shadow-md"
           >
             View Case Studies
           </Link>
           <Link
             href="/blog"
-            className="border border-gray-300 px-6 py-3 rounded-lg hover:border-gray-400 transition-colors"
+            className="border border-gray-300 px-6 py-3 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
           >
             Read Blog
           </Link>
@@ -37,10 +37,10 @@ export default function Home() {
       </section>
 
       {caseStudies.length > 0 && (
-        <section className="mb-24">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold">Featured Case Studies</h2>
-            <Link href="/case-studies" className="text-gray-600 hover:text-gray-900">
+        <section className="mb-32">
+          <div className="flex items-center justify-between mb-10">
+            <h2 className="text-4xl font-bold tracking-tight">Featured Case Studies</h2>
+            <Link href="/case-studies" className="text-gray-600 hover:text-[var(--accent)] transition-colors">
               View all →
             </Link>
           </div>
@@ -52,7 +52,7 @@ export default function Home() {
                 scroll={false}
                 className="group"
               >
-                <article className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                <article className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
                   {study.coverImage && (
                     <div className="aspect-video bg-gray-100 relative">
                       <Image
@@ -64,11 +64,11 @@ export default function Home() {
                     </div>
                   )}
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-[var(--accent)] transition-colors">
                       {study.title}
                     </h3>
                     <p className="text-gray-600 text-sm mb-3">{study.client} • {study.role}</p>
-                    <p className="text-gray-700 line-clamp-3">{study.excerpt}</p>
+                    <p className="text-gray-700 line-clamp-3 leading-relaxed">{study.excerpt}</p>
                   </div>
                 </article>
               </Link>
@@ -78,10 +78,10 @@ export default function Home() {
       )}
 
       {vibeProjects.length > 0 && (
-        <section className="mb-24">
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold mb-3">Vibe Coded Projects</h2>
-            <p className="text-gray-600 max-w-2xl">
+        <section className="mb-32">
+          <div className="mb-10">
+            <h2 className="text-4xl font-bold mb-4 tracking-tight">Vibe Coded Projects</h2>
+            <p className="text-gray-600 max-w-2xl leading-relaxed">
               Experimental projects and side builds where I explore new technologies,
               play with creative ideas, and code for the joy of it.
             </p>
@@ -93,16 +93,16 @@ export default function Home() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block py-5 border-b border-gray-200 hover:bg-gray-50 transition-colors -mx-4 px-4"
+                className="group block py-6 border-b border-gray-200 hover:bg-gray-50 transition-all duration-200 -mx-4 px-4 rounded-lg"
               >
                 <div className="flex items-start justify-between gap-6">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-lg font-semibold group-hover:underline decoration-2 underline-offset-4">
+                      <h3 className="text-lg font-semibold group-hover:text-[var(--accent)] transition-colors">
                         {project.title}
                       </h3>
                       <svg
-                        className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors flex-shrink-0"
+                        className="w-4 h-4 text-gray-400 group-hover:text-[var(--accent)] transition-colors flex-shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -119,7 +119,7 @@ export default function Home() {
                       {project.description}
                     </p>
                     {project.tech && project.tech.length > 0 && (
-                      <div className="flex gap-2 flex-wrap">
+                      <div className="flex gap-3 flex-wrap">
                         {project.tech.map((tech) => (
                           <span
                             key={tech}
@@ -145,9 +145,9 @@ export default function Home() {
 
       {blogPosts.length > 0 && (
         <section>
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold">Latest Posts</h2>
-            <Link href="/blog" className="text-gray-600 hover:text-gray-900">
+          <div className="flex items-center justify-between mb-10">
+            <h2 className="text-4xl font-bold tracking-tight">Latest Posts</h2>
+            <Link href="/blog" className="text-gray-600 hover:text-[var(--accent)] transition-colors">
               View all →
             </Link>
           </div>
@@ -158,13 +158,13 @@ export default function Home() {
                 href={`/blog/${post.slug}`}
                 className="group block"
               >
-                <article className="border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <article className="border border-gray-200 rounded-xl p-8 hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-xl font-semibold mb-3 group-hover:text-[var(--accent)] transition-colors">
                         {post.title}
                       </h3>
-                      <p className="text-gray-700 mb-3">{post.excerpt}</p>
+                      <p className="text-gray-700 mb-4 leading-relaxed">{post.excerpt}</p>
                       <div className="flex gap-4 text-sm text-gray-500">
                         <time>{new Date(post.date).toLocaleDateString()}</time>
                         <span>{post.readingTime}</span>
