@@ -28,6 +28,23 @@ export interface CaseStudy {
   coverImage?: string;
   tags?: string[];
   liveUrl?: string;
+  quickStats?: {
+    company: string;
+    role: string;
+    timeline?: string;
+    team?: string;
+    problem: string;
+    solution: string;
+  };
+  results?: {
+    metrics?: Array<{
+      label: string;
+      value: string;
+      description?: string;
+    }>;
+    impact?: string;
+    status?: string;
+  };
 }
 
 export function getContentByType(type: 'blog' | 'case-studies') {

@@ -1,14 +1,41 @@
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import type { CaseStudy } from "@/lib/markdown";
+import { ImageWithCaption } from "./mdx/image-with-caption";
+import { ImageGrid } from "./mdx/image-grid";
+import { ImageCompare } from "./mdx/image-compare";
+import { ImageGallery } from "./mdx/image-gallery";
+import { Callout } from "./mdx/callout";
+import { SectionDivider } from "./mdx/section-divider";
+import { QuickStats } from "./case-study/quick-stats";
+import { ResultsSection } from "./case-study/results-section";
 
 interface CaseStudyContentProps {
   caseStudy: CaseStudy;
 }
 
+// Custom MDX components for visual-first layouts
+const mdxComponents = {
+  ImageWithCaption,
+  ImageGrid,
+  ImageCompare,
+  ImageGallery,
+  Callout,
+  SectionDivider,
+  img: (props: any) => (
+    <Image
+      {...props}
+      width={1200}
+      height={800}
+      className="rounded-lg w-full h-auto"
+    />
+  ),
+};
+
 export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-4xl mx-auto">
+      {/* Minimal header - just title and tags */}
       <div className="mb-8">
         <div className="flex gap-2 mb-4">
           {caseStudy.tags?.map((tag) => (
@@ -21,31 +48,14 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
           ))}
         </div>
         <h1 className="text-5xl font-bold mb-4">{caseStudy.title}</h1>
-        <div className="flex flex-wrap gap-4 text-gray-600 mb-6">
-          <div>
-            <span className="font-semibold">Client:</span> {caseStudy.client}
-          </div>
-          <div>
-            <span className="font-semibold">Role:</span> {caseStudy.role}
-          </div>
-          <div>
-            <span className="font-semibold">Date:</span>{" "}
-            {new Date(caseStudy.date).toLocaleDateString()}
-          </div>
-          <div>{caseStudy.readingTime}</div>
-        </div>
-        {caseStudy.liveUrl && (
-          <a
-            href={caseStudy.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
-          >
-            View Live Project →
-          </a>
-        )}
       </div>
 
+      {/* Quick Stats Section - auto-rendered from frontmatter */}
+      {caseStudy.quickStats && (
+        <QuickStats stats={caseStudy.quickStats} liveUrl={caseStudy.liveUrl} />
+      )}
+
+      {/* Cover Image - full bleed */}
       {caseStudy.coverImage && (
         <div className="aspect-video bg-gray-100 rounded-lg mb-12 relative overflow-hidden">
           <Image
@@ -58,9 +68,15 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
         </div>
       )}
 
-      <div className="prose prose-lg max-w-none">
-        <MDXRemote source={caseStudy.content} />
+      {/* MDX Content - with custom components */}
+      <div className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-p:text-gray-700 prose-p:leading-relaxed">
+        <MDXRemote source={caseStudy.content} components={mdxComponents} />
       </div>
+
+      {/* Results Section - auto-rendered from frontmatter */}
+      {caseStudy.results && (
+        <ResultsSection results={caseStudy.results} />
+      )}
     </div>
   );
 }
