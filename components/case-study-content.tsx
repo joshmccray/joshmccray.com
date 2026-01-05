@@ -36,18 +36,18 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
   return (
     <div className="max-w-4xl mx-auto">
       {/* Minimal header - just title and tags */}
-      <div className="mb-8">
-        <div className="flex gap-2 mb-4">
+      <div className="mb-6">
+        <div className="flex gap-2 mb-3">
           {caseStudy.tags?.map((tag) => (
             <span
               key={tag}
-              className="text-xs px-3 py-1 bg-gray-100 rounded-full text-gray-600"
+              className="text-xs px-2 py-1 bg-gray-100 rounded-full text-gray-600 font-light"
             >
               {tag}
             </span>
           ))}
         </div>
-        <h1 className="text-5xl font-bold mb-4">{caseStudy.title}</h1>
+        <h1 className="text-2xl font-normal mb-3">{caseStudy.title}</h1>
       </div>
 
       {/* Quick Stats Section - auto-rendered from frontmatter */}
@@ -69,7 +69,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
       )}
 
       {/* MDX Content - with custom components */}
-      <div className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-p:text-gray-700 prose-p:leading-relaxed">
+      <div className="prose prose-sm max-w-none prose-headings:font-normal prose-headings:tracking-tight prose-h2:text-lg prose-h2:mt-8 prose-h2:mb-4 prose-p:text-gray-700 prose-p:text-xs prose-p:leading-relaxed prose-p:font-light">
         <MDXRemote source={caseStudy.content} components={mdxComponents} />
       </div>
 

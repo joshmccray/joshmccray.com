@@ -12,22 +12,22 @@ interface ResultsProps {
 
 export function ResultsSection({ results }: ResultsProps) {
   return (
-    <div className="mt-16 pt-12 border-t border-gray-200">
-      <h2 className="text-3xl font-bold mb-8">Impact</h2>
+    <div className="mt-12 pt-8 border-t border-gray-200">
+      <h2 className="text-lg font-normal mb-6">Impact</h2>
 
       {/* Metrics grid */}
       {results.metrics && results.metrics.length > 0 && (
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-3 gap-4 mb-6">
           {results.metrics.map((metric, idx) => (
-            <div key={idx} className="p-6 bg-gray-50 rounded-lg">
-              <div className="text-4xl font-bold text-gray-900 mb-2">
+            <div key={idx} className="p-4 bg-gray-50 rounded-lg">
+              <div className="text-2xl font-normal text-gray-900 mb-2">
                 {metric.value}
               </div>
-              <div className="text-sm font-medium text-gray-900 mb-1">
+              <div className="text-xs font-normal text-gray-900 mb-1">
                 {metric.label}
               </div>
               {metric.description && (
-                <div className="text-sm text-gray-600">
+                <div className="text-xs text-gray-600 font-light">
                   {metric.description}
                 </div>
               )}
@@ -37,11 +37,11 @@ export function ResultsSection({ results }: ResultsProps) {
       )}
 
       {results.impact && (
-        <p className="text-gray-700 mb-4">{results.impact}</p>
+        <p className="text-xs text-gray-700 mb-3 font-light">{results.impact}</p>
       )}
 
       {results.status && (
-        <div className="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+        <div className="inline-block px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-normal">
           {results.status}
         </div>
       )}
