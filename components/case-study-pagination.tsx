@@ -4,19 +4,25 @@ import type { CaseStudy } from "@/lib/markdown";
 interface CaseStudyPaginationProps {
   previous?: CaseStudy;
   next?: CaseStudy;
+  isModal?: boolean;
 }
 
-export function CaseStudyPagination({ previous, next }: CaseStudyPaginationProps) {
+export function CaseStudyPagination({ previous, next, isModal = false }: CaseStudyPaginationProps) {
   if (!previous && !next) {
     return null;
   }
+
+  const getHref = (slug: string) => {
+    return isModal ? `/?modal=${slug}` : `/case-studies/${slug}`;
+  };
 
   return (
     <nav className="mt-20 pt-12 border-t border-gray-200">
       <div className="grid md:grid-cols-2 gap-6">
         {previous ? (
           <Link
-            href={`/case-studies/${previous.slug}`}
+            href={getHref(previous.slug)}
+            scroll={false}
             className="group block border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-x-1"
           >
             <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
@@ -46,7 +52,8 @@ export function CaseStudyPagination({ previous, next }: CaseStudyPaginationProps
 
         {next ? (
           <Link
-            href={`/case-studies/${next.slug}`}
+            href={getHref(next.slug)}
+            scroll={false}
             className="group block border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:translate-x-1 text-right"
           >
             <div className="flex items-center justify-end gap-2 text-sm text-gray-500 mb-3">

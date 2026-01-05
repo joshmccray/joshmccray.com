@@ -2,14 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { CaseStudyContent } from "./case-study-content";
+import { CaseStudyPagination } from "./case-study-pagination";
 import type { CaseStudy } from "@/lib/markdown";
 
 interface CaseStudyDrawerClientProps {
   caseStudy: CaseStudy;
   onClose: () => void;
+  previous?: CaseStudy;
+  next?: CaseStudy;
 }
 
-export function CaseStudyDrawerClient({ caseStudy, onClose }: CaseStudyDrawerClientProps) {
+export function CaseStudyDrawerClient({ caseStudy, onClose, previous, next }: CaseStudyDrawerClientProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -85,6 +88,7 @@ export function CaseStudyDrawerClient({ caseStudy, onClose }: CaseStudyDrawerCli
         {/* Scrollable content */}
         <div className="h-full overflow-y-auto px-4 py-16 md:px-8">
           <CaseStudyContent caseStudy={caseStudy} />
+          <CaseStudyPagination previous={previous} next={next} isModal={true} />
         </div>
       </div>
     </div>
