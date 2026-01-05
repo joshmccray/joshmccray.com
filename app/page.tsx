@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllBlogPosts, getAllCaseStudies } from "@/lib/markdown";
 import { CaseStudyModalWrapper } from "@/components/case-study-modal-wrapper";
+import { vibeProjects } from "@/lib/vibe-projects";
 
 export default function Home() {
   const allCaseStudies = getAllCaseStudies();
@@ -71,6 +72,66 @@ export default function Home() {
                   </div>
                 </article>
               </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {vibeProjects.length > 0 && (
+        <section className="mb-24">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold mb-3">Vibe Coded Projects</h2>
+            <p className="text-gray-600 max-w-2xl">
+              Experimental projects and side builds where I explore new technologies,
+              play with creative ideas, and code for the joy of it.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+            {vibeProjects.map((project) => (
+              <a
+                key={project.id}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block border rounded-lg p-6 hover:shadow-lg hover:border-gray-400 transition-all"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors">
+                    {project.title}
+                  </h3>
+                  <svg
+                    className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors flex-shrink-0 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </div>
+                <p className="text-gray-700 mb-4">{project.description}</p>
+                <div className="flex items-center gap-4 text-sm">
+                  {project.tech && project.tech.length > 0 && (
+                    <div className="flex gap-2 flex-wrap">
+                      {project.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {project.year && (
+                    <span className="text-gray-500 ml-auto">{project.year}</span>
+                  )}
+                </div>
+              </a>
             ))}
           </div>
         </section>
