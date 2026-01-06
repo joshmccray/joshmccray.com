@@ -13,14 +13,19 @@ export default function Home() {
     <CaseStudyModalWrapper caseStudies={allCaseStudies}>
       <div className="container mx-auto px-4 py-20">
       <section className="max-w-3xl mb-32">
-        <h1 className="text-2xl font-normal mb-6 tracking-tight">
+        <h1 className="text-4xl font-normal mb-6 tracking-tight">
           Hi, I&apos;m Josh McCray
         </h1>
-        <p className="text-sm text-gray-600 mb-8 leading-relaxed font-light">
-          I&apos;m a product designer focused on creating intuitive, user-centered experiences.
-          I combine design thinking with technical expertise to build products that people love.
+        <p className="text-sm text-gray-600 mb-4 leading-relaxed font-light">
+          I&apos;m a product designer focused on creating intuitive, user-centered experiences
+          for web and mobile. I combine design thinking with technical expertise to build
+          products that people love.
         </p>
-        <div className="flex gap-3">
+        <p className="text-sm text-gray-600 mb-8 leading-relaxed font-light">
+          Currently designing at Compassion International, previously at Jockey. I specialize
+          in design systems, UX research, and bridging design-development collaboration.
+        </p>
+        <div className="flex gap-3 items-center flex-wrap">
           <Link
             href="/case-studies"
             className="bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 shadow-sm hover:shadow-md font-normal"
@@ -28,10 +33,16 @@ export default function Home() {
             View Case Studies
           </Link>
           <Link
-            href="/blog"
+            href="/about"
             className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
           >
-            Read Blog
+            About Me
+          </Link>
+          <Link
+            href="/contact"
+            className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
+          >
+            Get in Touch
           </Link>
         </div>
       </section>
