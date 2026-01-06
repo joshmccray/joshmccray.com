@@ -133,22 +133,125 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* CTA Section */}
+        {/* Services Section */}
         <section className="border-t border-gray-200 pt-12">
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-            <Link
-              href="/contact"
-              className="bg-[var(--accent)] text-white px-6 py-3 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 shadow-sm hover:shadow-md font-normal"
-            >
-              Let's Work Together
-            </Link>
-            <a
-              href="/resume.pdf"
-              download
-              className="border border-gray-300 px-6 py-3 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
-            >
-              Download Resume
-            </a>
+          <h2 className="text-lg font-normal mb-3 tracking-tight text-center">
+            How I Can Help
+          </h2>
+          <p className="text-xs text-gray-600 mb-12 text-center font-light max-w-2xl mx-auto">
+            Whether you're refining an existing product or building something new,
+            I offer focused engagements designed to move your product forward.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {/* Service 1: UX/Design Audit */}
+            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300">
+              <h3 className="text-sm font-normal mb-2">UX/Design Audit</h3>
+              <p className="text-xs text-gray-600 mb-4 leading-relaxed font-light">
+                Get expert analysis of your product's user experience with actionable
+                recommendations to improve usability and conversion.
+              </p>
+              <div className="mb-4">
+                <p className="text-xs text-gray-600 font-normal mb-2">What's included:</p>
+                <ul className="text-xs text-gray-600 space-y-1 font-light">
+                  <li>• Heuristic evaluation</li>
+                  <li>• Usability analysis</li>
+                  <li>• Prioritized recommendations</li>
+                  <li>• 1-hour presentation call</li>
+                </ul>
+              </div>
+              <div className="mb-4 pt-4 border-t border-gray-200">
+                <p className="text-2xl font-normal text-gray-900">$1,500</p>
+                <p className="text-xs text-gray-500 font-light">2-week turnaround</p>
+              </div>
+              <Link
+                href="/contact"
+                className="block w-full text-center bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 font-normal"
+              >
+                Get Started
+              </Link>
+            </div>
+
+            {/* Service 2: Product Design (0-1) */}
+            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300">
+              <h3 className="text-sm font-normal mb-2">Product Design (0-1)</h3>
+              <p className="text-xs text-gray-600 mb-4 leading-relaxed font-light">
+                Transform your product idea into polished, user-tested designs ready
+                for development. From concept to high-fidelity prototypes.
+              </p>
+              <div className="mb-4">
+                <p className="text-xs text-gray-600 font-normal mb-2">What's included:</p>
+                <ul className="text-xs text-gray-600 space-y-1 font-light">
+                  <li>• Discovery & requirements</li>
+                  <li>• Wireframes & user flows</li>
+                  <li>• High-fidelity designs</li>
+                  <li>• Interactive prototypes</li>
+                  <li>• Design system foundations</li>
+                </ul>
+              </div>
+              <div className="mb-4 pt-4 border-t border-gray-200">
+                <p className="text-2xl font-normal text-gray-900">$8,500</p>
+                <p className="text-xs text-gray-500 font-light">4-6 week engagement</p>
+              </div>
+              <Link
+                href="/contact"
+                className="block w-full text-center bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 font-normal"
+              >
+                Get Started
+              </Link>
+            </div>
+
+            {/* Service 3: UX Research & Strategy */}
+            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300">
+              <h3 className="text-sm font-normal mb-2">UX Research & Strategy</h3>
+              <p className="text-xs text-gray-600 mb-4 leading-relaxed font-light">
+                Validate assumptions and guide product decisions with user research.
+                Understand your users deeply before investing in design and development.
+              </p>
+              <div className="mb-4">
+                <p className="text-xs text-gray-600 font-normal mb-2">What's included:</p>
+                <ul className="text-xs text-gray-600 space-y-1 font-light">
+                  <li>• User interviews (5-8)</li>
+                  <li>• Persona development</li>
+                  <li>• Journey mapping</li>
+                  <li>• Strategic recommendations</li>
+                  <li>• Findings presentation</li>
+                </ul>
+              </div>
+              <div className="mb-4 pt-4 border-t border-gray-200">
+                <p className="text-2xl font-normal text-gray-900">$3,500</p>
+                <p className="text-xs text-gray-500 font-light">3-week engagement</p>
+              </div>
+              <Link
+                href="/contact"
+                className="block w-full text-center bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 font-normal"
+              >
+                Get Started
+              </Link>
+            </div>
+          </div>
+
+          {/* Additional Options */}
+          <div className="text-center pt-6 border-t border-gray-200">
+            <p className="text-xs text-gray-600 mb-4 font-light">
+              Need something different? I also offer design system optimization,
+              ongoing consultation retainers, and custom engagements.
+            </p>
+            <div className="flex gap-3 justify-center flex-wrap">
+              <Link
+                href="/contact"
+                className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
+              >
+                Discuss Custom Project
+              </Link>
+              <a
+                href="/resume.pdf"
+                download
+                className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
+              >
+                Download Resume
+              </a>
+            </div>
           </div>
         </section>
       </div>
