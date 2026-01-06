@@ -1,10 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export function Navigation() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isActive = (path: string) => {
     if (path === '/') {
@@ -14,10 +16,14 @@ export function Navigation() {
   };
 
   const linkClass = (path: string) => {
-    const base = "text-xs transition-colors font-light";
+    const base = "text-sm transition-colors font-light block py-3";
     return isActive(path)
       ? `${base} text-[var(--accent)]`
       : `${base} text-gray-600 hover:text-[var(--accent)]`;
+  };
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -41,22 +47,56 @@ export function Navigation() {
               </div>
             </div>
           </Link>
-          <div className="flex gap-6">
-            <Link href="/about" className={linkClass('/about')}>
-              About
-            </Link>
-            <Link href="/case-studies" className={linkClass('/case-studies')}>
-              Case Studies
-            </Link>
-            <Link href="/blog" className={linkClass('/blog')}>
-              Blog
-            </Link>
-            <Link href="/contact" className={linkClass('/contact')}>
-              Contact
-            </Link>
-          </div>
+
+          {/* Hamburger button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="w-10 h-10 flex items-center justify-center hover:bg-gray-50 rounded-lg transition-colors"
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <div className="w-5 h-4 flex flex-col justify-between">
+              <span
+                className={`block h-0.5 w-full bg-gray-900 transition-all duration-300 ${
+                  isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-full bg-gray-900 transition-all duration-300 ${
+                  isMenuOpen ? 'opacity-0' : ''
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-full bg-gray-900 transition-all duration-300 ${
+                  isMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                }`}
+              />
+            </div>
+          </button>
         </div>
       </div>
+
+      {/* Menu dropdown */}
+      {isMenuOpen && (
+        <div className="border-t border-gray-200 bg-[var(--background)]">
+          <div className="container mx-auto px-4 py-4">
+            <div className="flex flex-col">
+              <Link href="/about" className={linkClass('/about')} onClick={handleLinkClick}>
+                About
+              </Link>
+              <Link href="/case-studies" className={linkClass('/case-studies')} onClick={handleLinkClick}>
+                Case Studies
+              </Link>
+              <Link href="/blog" className={linkClass('/blog')} onClick={handleLinkClick}>
+                Blog
+              </Link>
+              <Link href="/contact" className={linkClass('/contact')} onClick={handleLinkClick}>
+                Contact
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
