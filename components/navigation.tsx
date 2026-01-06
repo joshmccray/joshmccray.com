@@ -26,13 +26,20 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className={`text-sm font-normal tracking-tight transition-colors ${
+            className={`transition-colors ${
               isActive('/') && pathname === '/'
                 ? 'text-[var(--accent)]'
-                : 'text-gray-900 hover:text-[var(--accent)]'
+                : 'hover:text-[var(--accent)]'
             }`}
           >
-            Josh McCray
+            <div>
+              <div className="text-sm font-normal tracking-tight text-gray-900">
+                Josh McCray
+              </div>
+              <div className="text-xs text-gray-500 font-light">
+                Product Designer
+              </div>
+            </div>
           </Link>
           <div className="flex gap-6">
             <Link href="/about" className={linkClass('/about')}>
