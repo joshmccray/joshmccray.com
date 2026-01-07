@@ -15,7 +15,7 @@ export default function CaseStudiesPage() {
   return (
     <CaseStudyModalWrapper caseStudies={caseStudies}>
       <div className="container mx-auto px-4 py-16">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <div className="mb-16">
           <h1 className="text-3xl font-normal mb-6 tracking-tight">Case Studies</h1>
           <p className="text-sm text-gray-600 font-light leading-relaxed max-w-3xl">
@@ -31,7 +31,7 @@ export default function CaseStudiesPage() {
             </p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {caseStudies.map((study) => (
             <Link
               key={study.slug}
