@@ -78,19 +78,44 @@ export function Navigation() {
 
       {/* Menu dropdown */}
       {isMenuOpen && (
-        <div className="border-t border-gray-200 bg-[var(--background)]">
+        <div
+          className="border-t border-gray-200 bg-[var(--background)] overflow-hidden"
+          style={{
+            animation: 'slideDown 300ms ease-out forwards'
+          }}
+        >
           <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col">
-              <Link href="/about" className={linkClass('/about')} onClick={handleLinkClick}>
+              <Link
+                href="/about"
+                className={linkClass('/about')}
+                onClick={handleLinkClick}
+                style={{ animation: 'fadeInUp 400ms ease-out forwards', animationDelay: '50ms', opacity: 0 }}
+              >
                 About
               </Link>
-              <Link href="/case-studies" className={linkClass('/case-studies')} onClick={handleLinkClick}>
+              <Link
+                href="/case-studies"
+                className={linkClass('/case-studies')}
+                onClick={handleLinkClick}
+                style={{ animation: 'fadeInUp 400ms ease-out forwards', animationDelay: '100ms', opacity: 0 }}
+              >
                 Case Studies
               </Link>
-              <Link href="/blog" className={linkClass('/blog')} onClick={handleLinkClick}>
+              <Link
+                href="/blog"
+                className={linkClass('/blog')}
+                onClick={handleLinkClick}
+                style={{ animation: 'fadeInUp 400ms ease-out forwards', animationDelay: '150ms', opacity: 0 }}
+              >
                 Blog
               </Link>
-              <Link href="/contact" className={linkClass('/contact')} onClick={handleLinkClick}>
+              <Link
+                href="/contact"
+                className={linkClass('/contact')}
+                onClick={handleLinkClick}
+                style={{ animation: 'fadeInUp 400ms ease-out forwards', animationDelay: '200ms', opacity: 0 }}
+              >
                 Contact
               </Link>
             </div>
