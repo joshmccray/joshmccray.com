@@ -15,23 +15,24 @@ export default function CaseStudiesPage() {
   return (
     <CaseStudyModalWrapper caseStudies={caseStudies}>
       <div className="container mx-auto px-4 py-16">
-      <div className="max-w-3xl mb-16">
-        <h1 className="text-3xl font-normal mb-6 tracking-tight">Case Studies</h1>
-        <p className="text-sm text-gray-600 font-light leading-relaxed">
-          A collection of product design projects showcasing my approach to solving
-          user problems and creating impactful experiences.
-        </p>
-      </div>
-
-      {caseStudies.length === 0 ? (
-        <div className="text-center py-16">
-          <p className="text-gray-600 text-lg">
-            No case studies yet. Check back soon!
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-16">
+          <h1 className="text-3xl font-normal mb-6 tracking-tight">Case Studies</h1>
+          <p className="text-sm text-gray-600 font-light leading-relaxed max-w-3xl">
+            A collection of product design projects showcasing my approach to solving
+            user problems and creating impactful experiences.
           </p>
         </div>
-      ) : (
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl">
-          {caseStudies.map((study) => (
+
+        {caseStudies.length === 0 ? (
+          <div className="text-center py-16">
+            <p className="text-gray-600 text-lg">
+              No case studies yet. Check back soon!
+            </p>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 gap-8">
+            {caseStudies.map((study) => (
             <Link
               key={study.slug}
               href={`/case-studies?modal=${study.slug}`}
@@ -79,6 +80,7 @@ export default function CaseStudiesPage() {
         </div>
       )}
       </div>
+    </div>
     </CaseStudyModalWrapper>
   );
 }
