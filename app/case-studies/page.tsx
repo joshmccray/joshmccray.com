@@ -51,28 +51,11 @@ export default function CaseStudiesPage() {
                   </div>
                 )}
                 <div className="p-6">
-                  <div className="flex gap-2 mb-3">
-                    {study.tags?.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-2 py-1 bg-gray-100 rounded-full text-gray-600 font-light"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h2 className="text-sm font-normal mb-2 group-hover:text-[var(--accent)] transition-colors">
+                  <h3 className="text-sm font-normal mb-2 group-hover:text-[var(--accent)] transition-colors">
                     {study.title}
-                  </h2>
-                  <p className="text-gray-600 text-xs mb-3 font-light">
-                    {study.client} • {study.role}
-                  </p>
-                  <p className="text-gray-700 text-xs line-clamp-3 leading-relaxed font-light mb-4">{study.excerpt}</p>
-                  <div className="flex items-center text-xs text-gray-500 font-light">
-                    <time>{new Date(study.date).toLocaleDateString()}</time>
-                    <span className="mx-2">•</span>
-                    <span>{study.readingTime}</span>
-                  </div>
+                  </h3>
+                  <p className="text-gray-600 text-xs mb-3 font-light">{study.client} • {study.role}</p>
+                  <p className="text-gray-700 text-xs line-clamp-3 leading-relaxed font-light">{study.excerpt}</p>
                 </div>
               </article>
             </Link>
