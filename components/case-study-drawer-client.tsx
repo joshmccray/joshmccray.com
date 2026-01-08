@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CaseStudyContent } from "./case-study-content";
+import { CaseStudyContentClient } from "./case-study-content-client";
 import { CaseStudyPagination } from "./case-study-pagination";
 import type { CaseStudy } from "@/lib/markdown";
 
@@ -87,7 +87,7 @@ export function CaseStudyDrawerClient({ caseStudy, onClose, previous, next }: Ca
 
         {/* Scrollable content */}
         <div className="h-full overflow-y-auto px-4 py-16 md:px-8">
-          <CaseStudyContent caseStudy={caseStudy} />
+          <CaseStudyContentClient caseStudy={caseStudy} />
           <CaseStudyPagination previous={previous} next={next} isModal={true} />
         </div>
       </div>

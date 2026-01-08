@@ -21,10 +21,7 @@ export default function Home() {
           for web and mobile. I combine design thinking with technical expertise to build
           products that people love.
         </p>
-        <p className="text-sm text-gray-600 mb-8 leading-relaxed font-light">
-          Currently designing at Compassion International, previously at Jockey. I specialize
-          in design systems, UX research, and bridging design-development collaboration.
-        </p>
+     
         <div className="flex gap-3 items-center flex-wrap">
           <Link
             href="/case-studies"
