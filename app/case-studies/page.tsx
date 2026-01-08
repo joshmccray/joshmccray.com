@@ -16,9 +16,9 @@ export default function CaseStudiesPage() {
     <CaseStudyModalWrapper caseStudies={caseStudies}>
       <div className="container mx-auto px-4 py-16">
       <div className="max-w-4xl mx-auto">
-        <div className="mb-16">
-          <h1 className="text-3xl font-normal mb-6 tracking-tight">Case Studies</h1>
-          <p className="text-sm text-gray-600 font-light leading-relaxed max-w-3xl">
+        <div className="mb-20">
+          <h1 className="text-4xl font-normal mb-8 tracking-tight">Case Studies</h1>
+          <p className="text-base text-gray-600 font-light leading-relaxed max-w-2xl">
             A collection of product design projects showcasing my approach to solving
             user problems and creating impactful experiences.
           </p>
@@ -31,7 +31,7 @@ export default function CaseStudiesPage() {
             </p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {caseStudies.map((study) => (
             <Link
               key={study.slug}
@@ -50,12 +50,12 @@ export default function CaseStudiesPage() {
                     />
                   </div>
                 )}
-                <div className="p-6">
-                  <h3 className="text-sm font-normal mb-2 group-hover:text-[var(--accent)] transition-colors">
+                <div className="p-8">
+                  <h3 className="text-base font-normal mb-3 group-hover:text-[var(--accent)] transition-colors leading-snug">
                     {study.title}
                   </h3>
-                  <p className="text-gray-600 text-xs mb-3 font-light">{study.client} • {study.role}</p>
-                  <p className="text-gray-700 text-xs line-clamp-3 leading-relaxed font-light">{study.excerpt}</p>
+                  <p className="text-gray-600 text-sm mb-4 font-light">{study.client} • {study.role}</p>
+                  <p className="text-gray-700 text-sm line-clamp-3 leading-relaxed font-light">{study.excerpt}</p>
                 </div>
               </article>
             </Link>
