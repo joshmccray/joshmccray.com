@@ -22,13 +22,6 @@
   --font-display: var(--font-ibm-plex-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #2A2218;
-    --foreground: #F5F0E8;
-  }
-}
-
 html {
   background: var(--background);
 }
