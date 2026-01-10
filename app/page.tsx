@@ -12,14 +12,12 @@ export default function Home() {
   return (
     <CaseStudyModalWrapper caseStudies={allCaseStudies}>
       <div className="container mx-auto px-4 py-20">
-      <section className="max-w-3xl mb-32">
+        <section className="max-w-3xl mb-32">
         <h1 className="text-4xl font-normal mb-6 tracking-tight">
           Hi, I&apos;m Josh McCray
         </h1>
         <p className="text-sm text-gray-600 mb-4 leading-relaxed font-light">
-          I&apos;m a product designer focused on creating intuitive, user-centered experiences
-          for web and mobile. I combine design thinking with technical expertise to build
-          products that people love.
+          Senior Product Designer with 10+ years of experience creating exceptional digital experiences. I specialize in user experience design, visual design, and product development—with expertise spanning e-commerce, nonprofit, and early-stage tech sectors.
         </p>
      
         <div className="flex gap-3 items-center flex-wrap">
