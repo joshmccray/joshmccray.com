@@ -13,32 +13,46 @@ export default function Home() {
     <CaseStudyModalWrapper caseStudies={allCaseStudies}>
       <div className="container mx-auto px-4 py-20">
         <section className="max-w-3xl mb-32">
-        <h1 className="text-4xl font-normal mb-6 tracking-tight">
-          Hi, I&apos;m Josh McCray
-        </h1>
-        <p className="text-sm text-gray-600 mb-4 leading-relaxed font-light">
-          Senior Product Designer with 10+ years of experience creating exceptional digital experiences. I specialize in user experience design, visual design, and product development—with expertise spanning e-commerce, nonprofit, and early-stage tech sectors.
-        </p>
-     
-        <div className="flex gap-3 items-center flex-wrap">
-          <Link
-            href="/case-studies"
-            className="bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 shadow-sm hover:shadow-md font-normal"
-          >
-            View Case Studies
-          </Link>
-          <Link
-            href="/about"
-            className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
-          >
-            About Me
-          </Link>
-          <Link
-            href="/contact"
-            className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
-          >
-            Get in Touch
-          </Link>
+        <div className="flex flex-col md:flex-row gap-8 items-start">
+          <div className="flex-shrink-0">
+            <Image
+              src="/pfp.webp"
+              alt="Josh McCray"
+              width={120}
+              height={120}
+              className="rounded-full"
+              priority
+            />
+          </div>
+          <div className="flex-1">
+            <h1 className="text-4xl font-normal mb-6 tracking-tight">
+              Hi, I&apos;m Josh McCray
+            </h1>
+            <p className="text-sm text-gray-600 mb-4 leading-relaxed font-light">
+              Senior Product Designer with 10+ years of experience creating exceptional digital experiences. I specialize in user experience design, visual design, and product development—with expertise spanning e-commerce, nonprofit, and early-stage tech sectors.
+            </p>
+
+            <div className="flex gap-3 items-center flex-wrap">
+              <Link
+                href="/case-studies"
+                className="bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 shadow-sm hover:shadow-md font-normal"
+              >
+                View Case Studies
+              </Link>
+              <Link
+                href="/about"
+                className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
+              >
+                About Me
+              </Link>
+              <Link
+                href="/contact"
+                className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
+              >
+                Get in Touch
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
