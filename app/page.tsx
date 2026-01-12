@@ -106,7 +106,7 @@ export default function Home() {
               play with creative ideas, and code for the joy of it.
             </p>
           </div>
-          <div className="max-w-3xl space-y-1">
+          <div className="space-y-1">
             {vibeProjects.map((project, index) => (
               <a
                 key={project.id}
