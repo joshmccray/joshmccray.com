@@ -106,6 +106,15 @@ a:hover {
   }
 }
 
+@keyframes slideDownDrawer {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
 @keyframes slideDown {
   from {
     max-height: 0;

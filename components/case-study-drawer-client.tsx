@@ -61,7 +61,7 @@ export function CaseStudyDrawerClient({ caseStudy, onClose, previous, next }: Ca
   return (
     <div
       className={`fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
-        isClosing ? 'opacity-0' : 'opacity-100'
+        isClosing ? 'opacity-0' : 'opacity-0'
       }`}
       style={!isClosing ? { animation: 'fadeIn 300ms ease-out forwards' } : undefined}
       onClick={handleBackdropClick}
@@ -70,11 +70,15 @@ export function CaseStudyDrawerClient({ caseStudy, onClose, previous, next }: Ca
       aria-labelledby="drawer-title"
     >
       <div
-        className="relative h-[95vh] w-full bg-white rounded-t-2xl shadow-2xl transition-transform duration-300"
+        className="relative h-[95vh] w-full bg-white rounded-t-2xl shadow-2xl"
         style={
           isClosing
-            ? { transform: 'translateY(100%)' }
-            : { animation: 'slideUp 400ms ease-out forwards' }
+            ? {
+                animation: 'slideDownDrawer 300ms ease-out forwards'
+              }
+            : {
+                animation: 'slideUp 400ms ease-out forwards'
+              }
         }
       >
         {/* Close button */}
