@@ -20,7 +20,7 @@ export default function Home() {
               alt="Josh McCray"
               width={120}
               height={120}
-              className="rounded-full object-cover"
+              className="w-[120px] h-[120px] rounded-full object-cover"
               priority
             />
           </div>
