@@ -9,20 +9,12 @@ export interface VibeProject {
 
 export const vibeProjects: VibeProject[] = [
   {
-    id: "example-1",
-    title: "Example Vibe Project",
-    description: "A fun experimental project exploring new technologies and creative ideas.",
-    url: "https://example.com",
-    tech: ["React", "TypeScript", "Next.js"],
-    year: "2024",
-  },
-  {
-    id: "example-2",
-    title: "Another Experiment",
-    description: "Playing around with animations and interactive experiences.",
-    url: "https://example.com",
-    tech: ["Three.js", "WebGL"],
-    year: "2023",
+    id: "4321",
+    title: "4321",
+    description: "A weightlifting tracking application with the goal of hitting specific plate totals in the big 4 lifts.",
+    url: "https://joshmccray.github.io/4321/",
+    tech: ["React", "TypeScript"],
+    year: "2025",
   },
   // Add more vibe projects here
 ];
