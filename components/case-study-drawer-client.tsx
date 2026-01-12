@@ -14,6 +14,7 @@ interface CaseStudyDrawerClientProps {
 
 export function CaseStudyDrawerClient({ caseStudy, onClose, previous, next }: CaseStudyDrawerClientProps) {
   const [mounted, setMounted] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
     // Set mounted to true after hydration
@@ -25,7 +26,7 @@ export function CaseStudyDrawerClient({ caseStudy, onClose, previous, next }: Ca
     // Handle ESC key to close drawer
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        onClose();
+        handleClose();
       }
     };
 
@@ -35,10 +36,14 @@ export function CaseStudyDrawerClient({ caseStudy, onClose, previous, next }: Ca
       document.body.style.overflow = "unset";
       window.removeEventListener("keydown", handleEsc);
     };
-  }, [onClose]);
+  }, []);
 
   const handleClose = () => {
-    onClose();
+    setIsClosing(true);
+    // Wait for animation to complete before calling onClose
+    setTimeout(() => {
+      onClose();
+    }, 300);
   };
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -55,16 +60,22 @@ export function CaseStudyDrawerClient({ caseStudy, onClose, previous, next }: Ca
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-300 opacity-0"
-      style={{ animation: 'fadeIn 300ms ease-out forwards' }}
+      className={`fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
+        isClosing ? 'opacity-0' : 'opacity-100'
+      }`}
+      style={!isClosing ? { animation: 'fadeIn 300ms ease-out forwards' } : undefined}
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
       aria-labelledby="drawer-title"
     >
       <div
-        className="relative h-[90vh] w-full bg-white rounded-t-2xl shadow-2xl"
-        style={{ animation: 'slideUp 500ms ease-out forwards' }}
+        className="relative h-[95vh] w-full bg-white rounded-t-2xl shadow-2xl transition-transform duration-300"
+        style={
+          isClosing
+            ? { transform: 'translateY(100%)' }
+            : { animation: 'slideUp 400ms ease-out forwards' }
+        }
       >
         {/* Close button */}
         <button
