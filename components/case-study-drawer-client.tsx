@@ -60,10 +60,12 @@ export function CaseStudyDrawerClient({ caseStudy, onClose, previous, next }: Ca
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
-        isClosing ? 'opacity-0' : 'opacity-0'
-      }`}
-      style={!isClosing ? { animation: 'fadeIn 300ms ease-out forwards' } : undefined}
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm"
+      style={
+        isClosing
+          ? { animation: 'fadeOut 300ms ease-out forwards' }
+          : { animation: 'fadeIn 300ms ease-out forwards' }
+      }
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
