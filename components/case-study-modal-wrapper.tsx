@@ -38,7 +38,7 @@ function ModalContent({ caseStudies }: { caseStudies: CaseStudy[] }) {
   }, [searchParams, caseStudies]);
 
   const handleCloseModal = () => {
-    router.push(pathname);
+    router.push(pathname, { scroll: false });
   };
 
   if (!modalCaseStudy) {
