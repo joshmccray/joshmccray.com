@@ -7,10 +7,10 @@ export function Footer() {
           <div>
             <p className="text-xs text-gray-600 mb-2 font-light">Get in touch</p>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:hello@joshmccray.com"
               className="text-sm text-gray-900 hover:text-[var(--accent)] transition-colors font-normal"
             >
-              your.email@example.com
+              hello@joshmccray.com
             </a>
           </div>
 

@@ -24,14 +24,11 @@ export default function ContactPage() {
         <div className="mb-12 p-8 bg-gray-50 rounded-lg border border-gray-200">
           <p className="text-xs text-gray-600 mb-3 font-light">Email me at</p>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:hello@joshmccray.com"
             className="text-lg font-normal hover:text-[var(--accent)] transition-colors block mb-4"
           >
-            your.email@example.com
+            hello@joshmccray.com
           </a>
-          <p className="text-xs text-gray-500 font-light">
-            [Replace with your actual email address]
-          </p>
         </div>
 
         {/* Availability Status */}
@@ -109,7 +106,7 @@ export default function ContactPage() {
                 <p className="text-xs text-gray-500 font-light">2-week turnaround</p>
               </div>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:hello@joshmccray.com"
                 className="block w-full text-center bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 font-normal"
               >
                 Get Started
@@ -138,7 +135,7 @@ export default function ContactPage() {
                 <p className="text-xs text-gray-500 font-light">4-6 week engagement</p>
               </div>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:hello@joshmccray.com"
                 className="block w-full text-center bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 font-normal"
               >
                 Get Started
@@ -167,7 +164,7 @@ export default function ContactPage() {
                 <p className="text-xs text-gray-500 font-light">3-week engagement</p>
               </div>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:hello@joshmccray.com"
                 className="block w-full text-center bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 font-normal"
               >
                 Get Started
@@ -183,7 +180,7 @@ export default function ContactPage() {
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:hello@joshmccray.com"
                 className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
               >
                 Discuss Custom Project
