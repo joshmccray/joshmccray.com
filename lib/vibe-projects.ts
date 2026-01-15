@@ -9,6 +9,14 @@ export interface VibeProject {
 
 export const vibeProjects: VibeProject[] = [
   {
+    id: "loaded-questions",
+    title: "Loaded Questions",
+    description: "A party game app. Password protected — contact me to view.",
+    url: "https://curse-grasp-52303567.figma.site/",
+    tech: ["Figma Sites"],
+    year: "2025",
+  },
+  {
     id: "4321",
     title: "4321",
     description: "A weightlifting tracking application with the goal of hitting specific plate totals in the big 4 lifts.",
@@ -16,5 +24,4 @@ export const vibeProjects: VibeProject[] = [
     tech: ["React", "TypeScript"],
     year: "2025",
   },
-  // Add more vibe projects here
 ];
