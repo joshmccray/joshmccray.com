@@ -37,9 +37,9 @@ export default function CaseStudiesPage() {
               key={study.slug}
               href={`/case-studies?modal=${study.slug}`}
               scroll={false}
-              className="group"
+              className="group h-full"
             >
-              <article className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
+              <article className="h-full flex flex-col border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
                 {study.coverImage && (
                   <div className="aspect-video bg-gray-100 relative">
                     <Image
@@ -50,7 +50,7 @@ export default function CaseStudiesPage() {
                     />
                   </div>
                 )}
-                <div className="p-8">
+                <div className="p-8 flex-1 flex flex-col">
                   <h3 className="text-base font-normal mb-3 group-hover:text-[var(--accent)] transition-colors leading-snug">
                     {study.title}
                   </h3>
