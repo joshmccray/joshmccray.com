@@ -70,9 +70,9 @@ export default function Home() {
                 key={study.slug}
                 href={`/?modal=${study.slug}`}
                 scroll={false}
-                className="group"
+                className="group h-full"
               >
-                <article className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
+                <article className="h-full flex flex-col border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
                   {study.coverImage && (
                     <div className="aspect-video bg-gray-100 relative">
                       <Image
@@ -83,7 +83,7 @@ export default function Home() {
                       />
                     </div>
                   )}
-                  <div className="p-6">
+                  <div className="p-6 flex-1 flex flex-col">
                     <h3 className="text-sm font-normal mb-2 group-hover:text-[var(--accent)] transition-colors">
                       {study.title}
                     </h3>
