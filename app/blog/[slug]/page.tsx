@@ -42,18 +42,20 @@ export default async function BlogPostPage({ params }: Props) {
     <article className="container mx-auto px-4 py-16">
       <div className="max-w-3xl mx-auto">
         <div className="mb-12">
-          <div className="flex gap-2 mb-4">
-            {post.tags?.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs px-3 py-1 bg-gray-100 rounded-full text-gray-600"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-          <h1 className="text-5xl font-bold mb-6">{post.title}</h1>
-          <div className="flex items-center gap-4 text-gray-600">
+          {post.tags && post.tags.length > 0 && (
+            <div className="flex gap-2 mb-4">
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs px-2 py-1 bg-gray-100 rounded-full text-gray-600 font-light"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+          <h1 className="text-4xl font-normal mb-6 tracking-tight">{post.title}</h1>
+          <div className="flex items-center gap-3 text-xs text-gray-500 font-light">
             <time>{new Date(post.date).toLocaleDateString()}</time>
             <span>•</span>
             <span>{post.readingTime}</span>
@@ -61,10 +63,10 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
 
         {post.coverImage && (
-          <div className="aspect-video bg-gray-100 rounded-lg mb-12"></div>
+          <div className="aspect-video bg-gray-100 rounded-xl mb-12"></div>
         )}
 
-        <div className="prose prose-lg max-w-none">
+        <div className="prose prose-sm max-w-none prose-headings:font-normal prose-headings:tracking-tight prose-p:font-light prose-p:leading-relaxed prose-p:text-gray-700 prose-a:text-[var(--accent)] prose-a:no-underline hover:prose-a:underline">
           <MDXRemote source={post.content} />
         </div>
       </div>
