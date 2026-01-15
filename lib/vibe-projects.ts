@@ -11,7 +11,7 @@ export const vibeProjects: VibeProject[] = [
   {
     id: "loaded-questions",
     title: "Loaded Questions",
-    description: "A party game app. Password protected — contact me to view.",
+    description: "Big questions, expert answers. Insights from science, psychology, and philosophy on life's deepest questions. Password protected — contact me to view.",
     url: "https://curse-grasp-52303567.figma.site/",
     tech: ["Figma Sites"],
     year: "2025",
