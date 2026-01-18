@@ -9,6 +9,7 @@ import { Callout } from "./mdx/callout";
 import { SectionDivider } from "./mdx/section-divider";
 import { QuickStats } from "./case-study/quick-stats";
 import { ResultsSection } from "./case-study/results-section";
+import { ContentWrapper } from "./content-wrapper";
 
 interface CaseStudyContentProps {
   caseStudy: CaseStudy;
@@ -99,9 +100,9 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
       )}
 
       {/* MDX Content - with custom components */}
-      <div className="prose prose-sm max-w-none prose-headings:font-normal prose-headings:tracking-tight prose-h2:text-lg prose-h2:mt-8 prose-h2:mb-4 prose-p:text-gray-700 prose-p:text-xs prose-p:leading-relaxed prose-p:font-light">
+      <ContentWrapper>
         <MDXRemote source={caseStudy.content} components={mdxComponents} />
-      </div>
+      </ContentWrapper>
 
       {/* Results Section - auto-rendered from frontmatter */}
       {caseStudy.results && (

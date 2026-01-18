@@ -54,43 +54,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Skills & Tools Section */}
-        <section className="mb-24">
-          <h2 className="text-lg font-normal mb-6 tracking-tight">Skills & Tools</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-sm font-normal mb-4 text-gray-900">Design</h3>
-              <ul className="space-y-2 text-xs text-gray-600 font-light">
-                <li>Figma</li>
-                <li>Adobe Illustrator</li>
-                <li>Adobe Photoshop</li>
-                <li>Sketch</li>
-                <li>Principle</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-sm font-normal mb-4 text-gray-900">Development</h3>
-              <ul className="space-y-2 text-xs text-gray-600 font-light">
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>Next.js</li>
-                <li>HTML/CSS</li>
-                <li>Tailwind CSS</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-sm font-normal mb-4 text-gray-900">Process</h3>
-              <ul className="space-y-2 text-xs text-gray-600 font-light">
-                <li>User Research</li>
-                <li>Wireframing</li>
-                <li>Prototyping</li>
-                <li>Design Systems</li>
-                <li>Usability Testing</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
         {/* Career Timeline Section */}
         <section className="mb-24">
           <h2 className="text-lg font-normal mb-6 tracking-tight">Experience</h2>
@@ -137,32 +100,6 @@ export default function AboutPage() {
             <div className="border-l-2 border-gray-200 pl-4">
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <h3 className="text-sm font-normal text-gray-900">Lead Web Designer</h3>
-                  <p className="text-xs text-gray-600 font-light">Jockey International</p>
-                </div>
-                <span className="text-xs text-gray-500 font-light">Apr 2017 - Oct 2021</span>
-              </div>
-              <p className="text-xs text-gray-600 font-light leading-relaxed">
-                Led the User Experience and Web Design team for Jockey.com, overseeing the design and evolution of the e-commerce experience for a global brand.
-              </p>
-            </div>
-
-            <div className="border-l-2 border-gray-200 pl-4">
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-sm font-normal text-gray-900">Front End Web Designer</h3>
-                  <p className="text-xs text-gray-600 font-light">Jockey International</p>
-                </div>
-                <span className="text-xs text-gray-500 font-light">Mar 2015 - Apr 2017</span>
-              </div>
-              <p className="text-xs text-gray-600 font-light leading-relaxed">
-                Worked alongside web developers to create beautiful, usable solutions for Jockey.com, bridging design and development.
-              </p>
-            </div>
-
-            <div className="border-l-2 border-gray-200 pl-4">
-              <div className="flex justify-between items-start mb-2">
-                <div>
                   <h3 className="text-sm font-normal text-gray-900">Lecturer - Interactive Design</h3>
                   <p className="text-xs text-gray-600 font-light">University of Wisconsin-Parkside</p>
                 </div>
@@ -175,21 +112,13 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Personal Interests (Optional) */}
-        <section className="mb-24">
-          <h2 className="text-lg font-normal mb-6 tracking-tight">Beyond Design</h2>
-          <p className="text-sm text-gray-700 leading-relaxed font-light">
-            Outside of my professional work, I&apos;m passionate about giving back to the design community. I spent three years as a mentor through Out of Office Hours, helping students, designers, and developers who are new to the industry navigate their careers and develop their skills. I believe in the power of mentorship and community—many of the opportunities I&apos;ve had came from people who invested in me, and I&apos;m committed to paying that forward.
-          </p>
-        </section>
-
         {/* CTA Section */}
         <section className="border-t border-gray-200 pt-12 text-center">
           <h2 className="text-lg font-normal mb-3 tracking-tight">
             Let&apos;s Work Together
           </h2>
           <p className="text-xs text-gray-600 mb-6 font-light max-w-2xl mx-auto">
-            Interested in collaborating on your next product? I bring a unique blend of design expertise and technical knowledge to create exceptional user experiences.
+            Interested in collaborating on your next product? Let's chat!
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <Link

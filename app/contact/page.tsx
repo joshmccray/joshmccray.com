@@ -48,7 +48,7 @@ export default function ContactPage() {
           </p>
           <div className="flex gap-6 justify-center">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/joshmccray"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light"

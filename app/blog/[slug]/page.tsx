@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getBlogPost, getAllBlogPosts } from "@/lib/markdown";
 import type { Metadata } from "next";
+import Image from "next/image";
+import { ContentWrapper } from "@/components/content-wrapper";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -66,9 +68,9 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="aspect-video bg-gray-100 rounded-xl mb-12"></div>
         )}
 
-        <div className="prose prose-sm max-w-none prose-headings:font-normal prose-headings:tracking-tight prose-p:font-light prose-p:leading-relaxed prose-p:text-gray-700 prose-a:text-[var(--accent)] prose-a:no-underline hover:prose-a:underline">
+        <ContentWrapper>
           <MDXRemote source={post.content} />
-        </div>
+        </ContentWrapper>
       </div>
     </article>
   );
