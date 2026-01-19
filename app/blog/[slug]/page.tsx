@@ -3,6 +3,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { getBlogPost, getAllBlogPosts } from "@/lib/markdown";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { ContentWrapper } from "@/components/content-wrapper";
 
 interface Props {
@@ -43,6 +44,21 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <article className="container mx-auto px-4 py-16">
       <div className="max-w-3xl mx-auto">
+        {/* Breadcrumbs */}
+        <nav className="mb-8" aria-label="Breadcrumb">
+          <ol className="flex items-center gap-2 text-xs font-light">
+            <li>
+              <Link href="/blog" className="text-gray-500 hover:text-[var(--accent)] transition-colors">
+                Blog
+              </Link>
+            </li>
+            <li className="text-gray-400">/</li>
+            <li className="text-gray-700 truncate max-w-[200px]" aria-current="page">
+              {post.title}
+            </li>
+          </ol>
+        </nav>
+
         <div className="mb-12">
           {post.tags && post.tags.length > 0 && (
             <div className="flex gap-2 mb-4">
