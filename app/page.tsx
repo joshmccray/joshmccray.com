@@ -56,6 +56,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Worked With Section */}
+      <section className="mb-32 -mx-4 px-4 py-12 bg-gray-100/50 rounded-2xl border border-gray-200/50">
+        <p className="text-xs text-gray-500 mb-8 font-light uppercase tracking-wide text-center">Worked with</p>
+        <div className="flex items-center justify-center gap-12 md:gap-16 flex-wrap">
+          <Image
+            src="/Compassion-logo.svg"
+            alt="Compassion International"
+            width={140}
+            height={40}
+            className="h-8 w-auto opacity-50 hover:opacity-90 transition-opacity"
+          />
+          <Image
+            src="/Dwell-logo.svg"
+            alt="Dwell"
+            width={100}
+            height={40}
+            className="h-7 w-auto opacity-50 hover:opacity-90 transition-opacity"
+          />
+          <Image
+            src="/Jockey-logo.svg"
+            alt="Jockey"
+            width={100}
+            height={40}
+            className="h-6 w-auto opacity-50 hover:opacity-90 transition-opacity"
+          />
+        </div>
+      </section>
+
       {caseStudies.length > 0 && (
         <section className="mb-32">
           <div className="flex items-center justify-between mb-8">
