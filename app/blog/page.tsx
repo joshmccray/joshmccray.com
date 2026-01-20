@@ -11,14 +11,13 @@ export default function BlogPage() {
   const posts = getAllBlogPosts();
 
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-20">
+    <div className="container mx-auto px-4 py-20">
+        <section className="max-w-3xl mb-20">
           <h1 className="text-4xl font-normal mb-8 tracking-tight">Blog</h1>
-          <p className="text-base text-gray-600 font-light leading-relaxed max-w-2xl">
+          <p className="text-sm text-gray-600 font-light leading-relaxed">
             Thoughts on product design, development, and the creative process.
           </p>
-        </div>
+        </section>
 
         {posts.length === 0 ? (
           <div className="text-center py-16">
@@ -61,7 +60,6 @@ export default function BlogPage() {
             ))}
           </div>
         )}
-      </div>
     </div>
   );
 }
