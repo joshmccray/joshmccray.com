@@ -40,10 +40,10 @@ export default function CaseStudiesPage() {
               className="group h-full"
             >
               <article className="h-full flex flex-col border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
-                {study.coverImage && (
+                {(study.cardImage || study.coverImage) && (
                   <div className="aspect-video bg-gray-100 relative">
                     <Image
-                      src={study.coverImage}
+                      src={study.cardImage || study.coverImage!}
                       alt={study.title}
                       fill
                       className="object-cover"

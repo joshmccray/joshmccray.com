@@ -1,6 +1,6 @@
 ---
 title: "My Journey Embracing AI in Product Design"
-date: "2025-01-02"
+date: "2026-01-19"
 excerpt: "Lessons learned as I add AI workflows to my product design process."
 tags: ["Design Systems", "Product Design", "Best Practices"]
 ---
