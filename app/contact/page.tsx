@@ -185,6 +185,7 @@ export default function ContactPage() {
               >
                 Discuss Custom Project
               </a>
+              {/*
               <a
                 href="/resume.pdf"
                 download
@@ -192,6 +193,7 @@ export default function ContactPage() {
               >
                 Download Resume
               </a>
+              */}
             </div>
           </div>
         </section>
