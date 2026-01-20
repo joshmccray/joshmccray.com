@@ -56,7 +56,7 @@ export default function ContactPage() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/joshmccray/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light"
@@ -64,12 +64,12 @@ export default function ContactPage() {
               LinkedIn
             </a>
             <a
-              href="https://twitter.com/yourusername"
+              href="https://x.com/_joshmccray"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light"
             >
-              Twitter
+              X
             </a>
           </div>
         </div>
