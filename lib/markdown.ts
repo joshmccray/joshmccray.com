@@ -26,6 +26,7 @@ export interface CaseStudy {
   content: string;
   readingTime: string;
   coverImage?: string;
+  cardImage?: string; // Optional separate image for cards/thumbnails, falls back to coverImage
   tags?: string[];
   liveUrl?: string;
   quickStats?: {

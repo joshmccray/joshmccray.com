@@ -14,15 +14,14 @@ export default function CaseStudiesPage() {
 
   return (
     <CaseStudyModalWrapper caseStudies={caseStudies}>
-      <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-20">
+      <div className="container mx-auto px-4 py-20">
+        <section className="max-w-3xl mb-20">
           <h1 className="text-4xl font-normal mb-8 tracking-tight">Case Studies</h1>
-          <p className="text-base text-gray-600 font-light leading-relaxed max-w-2xl">
+          <p className="text-sm text-gray-600 font-light leading-relaxed">
             A collection of product design projects showcasing my approach to solving
             user problems and creating impactful experiences.
           </p>
-        </div>
+        </section>
 
         {caseStudies.length === 0 ? (
           <div className="text-center py-16">
@@ -40,10 +39,10 @@ export default function CaseStudiesPage() {
               className="group h-full"
             >
               <article className="h-full flex flex-col border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
-                {study.coverImage && (
+                {(study.cardImage || study.coverImage) && (
                   <div className="aspect-video bg-gray-100 relative">
                     <Image
-                      src={study.coverImage}
+                      src={study.cardImage || study.coverImage!}
                       alt={study.title}
                       fill
                       className="object-cover"
@@ -62,7 +61,6 @@ export default function CaseStudiesPage() {
           ))}
         </div>
       )}
-      </div>
     </div>
     </CaseStudyModalWrapper>
   );

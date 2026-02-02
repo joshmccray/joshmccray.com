@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-2xl mx-auto text-center">
+    <div className="container mx-auto px-4 py-20">
+      <div className="text-center">
         {/* Hero */}
         <h1 className="text-4xl font-normal mb-6 tracking-tight">
           Let's Build Something Together
@@ -56,7 +56,7 @@ export default function ContactPage() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/joshmccray/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light"
@@ -64,12 +64,12 @@ export default function ContactPage() {
               LinkedIn
             </a>
             <a
-              href="https://twitter.com/yourusername"
+              href="https://x.com/_joshmccray"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light"
             >
-              Twitter
+              X
             </a>
           </div>
         </div>
@@ -185,6 +185,7 @@ export default function ContactPage() {
               >
                 Discuss Custom Project
               </a>
+              {/*
               <a
                 href="/resume.pdf"
                 download
@@ -192,6 +193,7 @@ export default function ContactPage() {
               >
                 Download Resume
               </a>
+              */}
             </div>
           </div>
         </section>

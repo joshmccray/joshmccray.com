@@ -9,8 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-3xl mx-auto">
+    <div className="container mx-auto px-4 py-20">
         {/* Hero Section */}
         <section className="mb-24">
           <div className="flex flex-col md:flex-row gap-8 items-start mb-8">
@@ -138,6 +137,5 @@ export default function AboutPage() {
           </div>
         </section>
       </div>
-    </div>
   );
 }
