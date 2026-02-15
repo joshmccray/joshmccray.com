@@ -111,10 +111,18 @@ export function Navigation() {
                 Blog
               </Link>
               <Link
+                href="/shuffle"
+                className={linkClass('/shuffle')}
+                onClick={handleLinkClick}
+                style={{ animation: 'fadeInUp 400ms ease-out forwards', animationDelay: '200ms', opacity: 0 }}
+              >
+                Shuffle
+              </Link>
+              <Link
                 href="/contact"
                 className={linkClass('/contact')}
                 onClick={handleLinkClick}
-                style={{ animation: 'fadeInUp 400ms ease-out forwards', animationDelay: '200ms', opacity: 0 }}
+                style={{ animation: 'fadeInUp 400ms ease-out forwards', animationDelay: '250ms', opacity: 0 }}
               >
                 Contact
               </Link>
