@@ -7,6 +7,11 @@ excerpt: "Designing and building a landing page to launch Dwell's affiliate prog
 tags: ["Landing Page", "Web Development", "Affiliate Marketing", "Partnership Program"]
 coverImage: "/case-studies/dwell-affiliates-landing-page/hero.png"
 liveUrl: "https://dwellapp.io/affiliate"
+quickStats:
+  company: "Dwell"
+  role: "Design, Web Development"
+  problem: "Dwell was launching an affiliate program but had no way to attract and onboard content creators, influencers, and ministry partners—each with different motivations and questions about the opportunity."
+  solution: "A clear, conversion-focused landing page that communicates the program's value proposition, commission structure, and signup process while speaking to multiple partner audiences."
 ---
 
 ## Overview

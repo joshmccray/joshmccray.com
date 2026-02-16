@@ -7,6 +7,11 @@ excerpt: "End-to-end creative direction for Jockey's specialized period underwea
 tags: ["Branding", "Illustration", "Web Development", "Marketing"]
 coverImage: "/case-studies/worry-free/mockup-1.png"
 liveUrl: "https://www.jockey.com/worryfree-period"
+quickStats:
+  company: "Jockey"
+  role: "Creative Direction, Design, Illustration, Development"
+  problem: "Jockey was launching a new period underwear line into a sensitive product category that needed to balance technical credibility with emotional reassurance—without feeling clinical or cold."
+  solution: "End-to-end creative direction including custom illustrations, educational diagrams, and fully coded responsive landing pages that explain product features while building an emotional connection with the brand."
 ---
 
 ## Overview

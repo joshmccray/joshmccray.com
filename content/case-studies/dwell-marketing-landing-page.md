@@ -7,6 +7,11 @@ excerpt: "Designing and developing a high-converting marketing landing page for 
 tags: ["Marketing", "Landing Page", "Product Design", "Conversion Optimization"]
 coverImage: "/case-studies/dwell-marketing-landing-page/mobile.png"
 liveUrl: ""
+quickStats:
+  company: "Dwell"
+  role: "Product Design, Web Development"
+  problem: "Dwell's premium audio Bible app had unique differentiators—customizable voices, background music, meditation tools—but no dedicated page to communicate that value and convert visitors into users."
+  solution: "A high-converting, mobile-first marketing landing page that showcases real app screenshots and frames features as benefits, driving user acquisition through clear visual storytelling."
 ---
 
 ## Overview

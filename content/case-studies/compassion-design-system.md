@@ -7,6 +7,11 @@ excerpt: "Building a headless, multi-brand design system powered by design token
 tags: ["Design Systems", "Design Tokens", "Theming", "Multi-Brand"]
 coverImage: "/case-studies/compassion-design-system/hero.png"
 liveUrl: ""
+quickStats:
+  company: "Compassion International"
+  role: "Design Token Architecture, Design"
+  problem: "A global organization with diverse technology stacks (iOS, .NET, React) and multiple brands had no unified design language—leading to inconsistencies, duplicated effort, and slow delivery across teams."
+  solution: "A headless, multi-brand design system powered by a three-tier token architecture, enabling consistent theming across platforms and brands from a single source of truth."
 ---
 
 ## Overview

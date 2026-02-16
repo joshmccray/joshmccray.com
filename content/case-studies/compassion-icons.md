@@ -8,6 +8,11 @@ tags: ["Iconography", "Visual Design", "Brand Systems", "Design Systems"]
 coverImage: "/case-studies/compassion-icons/icon-1.png"
 cardImage: "/case-studies/compassion-icons/icon-cover.png"
 liveUrl: ""
+quickStats:
+  company: "Compassion International"
+  role: "Icon Design, Visual Systems"
+  problem: "Generic icon libraries felt cold and corporate, failing to capture the warmth of a child-focused organization—and often defaulted to Western-centric visual assumptions that didn't represent Compassion's global audience."
+  solution: "A custom product icon library with organic curves, culturally sensitive representations, and brand typeface-inspired details that scale from small UI elements to large marketing materials."
 ---
 
 ## Overview

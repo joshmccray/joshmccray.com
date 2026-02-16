@@ -7,6 +7,11 @@ excerpt: "Modernizing Compassion's checkout experience by implementing UX best p
 tags: ["UX Design", "E-commerce", "Conversion Optimization", "Design Systems"]
 coverImage: "/case-studies/compassion-checkout-redesign/header.png"
 liveUrl: ""
+quickStats:
+  company: "Compassion International"
+  role: "UX Design"
+  problem: "Compassion's checkout process needed modernization during a rebrand—express checkout options were buried, donation types were presented inconsistently, and the flow had unnecessary friction."
+  solution: "A redesigned checkout experience that elevates express payment options, standardizes donation type presentation, and simplifies form interactions to reduce abandonment."
 ---
 
 ## Overview

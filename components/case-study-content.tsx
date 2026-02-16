@@ -36,49 +36,19 @@ const mdxComponents = {
 export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
   return (
     <div className="max-w-4xl mx-auto">
-      {/* Minimal header - just title and tags */}
-      <div className="mb-12">
-        <div className="flex gap-2 mb-3">
+      {/* Header */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-normal tracking-tight mb-4">{caseStudy.title}</h1>
+        <div className="flex flex-wrap gap-2">
           {caseStudy.tags?.map((tag) => (
             <span
               key={tag}
-              className="text-xs px-2 py-1 bg-gray-100 rounded-full text-gray-600 font-light"
+              className="text-[10px] px-2 py-0.5 border border-gray-200 rounded-full text-gray-400 font-light uppercase tracking-wider"
             >
               {tag}
             </span>
           ))}
         </div>
-        <h1 className="text-2xl font-normal mb-6">{caseStudy.title}</h1>
-
-        {/* Client and Role */}
-        <div className="grid grid-cols-2 gap-6 mb-8 pb-8 border-b border-gray-200">
-          <div>
-            <p className="text-xs text-gray-500 mb-1 font-light uppercase tracking-wide">Client</p>
-            <p className="text-sm text-gray-900 font-normal">{caseStudy.client}</p>
-          </div>
-          <div>
-            <p className="text-xs text-gray-500 mb-1 font-light uppercase tracking-wide">Role</p>
-            <p className="text-sm text-gray-900 font-normal">{caseStudy.role}</p>
-          </div>
-        </div>
-
-        {/* Problem and Solution */}
-        {caseStudy.quickStats && (
-          <div className="space-y-6 mb-8">
-            {caseStudy.quickStats.problem && (
-              <div>
-                <p className="text-xs text-gray-500 mb-2 font-light uppercase tracking-wide">Problem</p>
-                <p className="text-sm text-gray-700 leading-relaxed font-light">{caseStudy.quickStats.problem}</p>
-              </div>
-            )}
-            {caseStudy.quickStats.solution && (
-              <div>
-                <p className="text-xs text-gray-500 mb-2 font-light uppercase tracking-wide">Solution</p>
-                <p className="text-sm text-gray-700 leading-relaxed font-light">{caseStudy.quickStats.solution}</p>
-              </div>
-            )}
-          </div>
-        )}
       </div>
 
       {/* Quick Stats Section - auto-rendered from frontmatter */}

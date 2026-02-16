@@ -7,6 +7,11 @@ excerpt: "An AI-powered, experiential marketing tool that transforms children's 
 tags: ["Product Design", "AI", "Experiential Marketing", "Prototyping"]
 coverImage: "/case-studies/tapestry-builder/hero.png"
 liveUrl: ""
+quickStats:
+  company: "Compassion International"
+  role: "Product Design, Prototyping"
+  problem: "Compassion had thousands of children's illustrations but no way to turn them into personalized, meaningful experiences that strengthen the connection between sponsors and the children they support."
+  solution: "An AI-powered tool that lets users answer questions about their interests and values, then generates personalized tapestries from children's illustrations for marketing materials, merchandise, and storytelling."
 ---
 
 ## Overview

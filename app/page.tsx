@@ -2,11 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllBlogPosts, getAllCaseStudies } from "@/lib/markdown";
 import { CaseStudyModalWrapper } from "@/components/case-study-modal-wrapper";
+import { Carousel } from "@/components/carousel";
 import { vibeProjects } from "@/lib/vibe-projects";
 
 export default function Home() {
   const allCaseStudies = getAllCaseStudies();
-  const caseStudies = allCaseStudies.slice(0, 3);
+  const featured = allCaseStudies.slice(0, 3);
+  const remaining = allCaseStudies.slice(3);
   const blogPosts = getAllBlogPosts().slice(0, 3);
 
   return (
@@ -84,8 +86,8 @@ export default function Home() {
         </div>
       </section>
 
-      {caseStudies.length > 0 && (
-        <section className="mb-32">
+      {featured.length > 0 && (
+        <section className="mb-32 overflow-hidden">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-lg font-normal tracking-tight">Featured Case Studies</h2>
             <Link href="/case-studies" className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light">
@@ -93,7 +95,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {caseStudies.map((study) => (
+            {featured.map((study) => (
               <Link
                 key={study.slug}
                 href={`/?modal=${study.slug}`}
@@ -122,6 +124,43 @@ export default function Home() {
               </Link>
             ))}
           </div>
+
+          {/* More Projects — Carousel */}
+          {remaining.length > 0 && (
+            <div className="mt-12">
+              <h3 className="text-sm font-normal tracking-tight mb-6 text-gray-500">More Projects</h3>
+              <Carousel>
+                {remaining.map((study) => (
+                  <Link
+                    key={study.slug}
+                    href={`/?modal=${study.slug}`}
+                    scroll={false}
+                    className="group flex-shrink-0 h-full"
+                    style={{ scrollSnapAlign: "start" }}
+                  >
+                    <article className="w-[280px] h-full flex flex-col border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
+                      {(study.cardImage || study.coverImage) && (
+                        <div className="aspect-video bg-gray-100 relative">
+                          <Image
+                            src={study.cardImage || study.coverImage!}
+                            alt={study.title}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      )}
+                      <div className="p-5">
+                        <h3 className="text-sm font-normal mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug">
+                          {study.title}
+                        </h3>
+                        <p className="text-gray-500 text-xs font-light">{study.client}</p>
+                      </div>
+                    </article>
+                  </Link>
+                ))}
+              </Carousel>
+            </div>
+          )}
         </section>
       )}
 
