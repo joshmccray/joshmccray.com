@@ -20,6 +20,22 @@
   --font-sans: var(--font-ibm-plex-mono);
   --font-mono: var(--font-ibm-plex-mono);
   --font-display: var(--font-ibm-plex-mono);
+
+  /* Warm gray ramp — replaces Tailwind's cool blue-grays */
+  --color-gray-50: #FBF9F6;
+  --color-gray-100: #F5F0E8;
+  --color-gray-200: #EBE4D8;
+  --color-gray-300: #D6CCBC;
+  --color-gray-400: #B5A997;
+  --color-gray-500: #8F8272;
+  --color-gray-600: #6B5F4F;
+  --color-gray-700: #564C3E;
+  --color-gray-800: #403830;
+  --color-gray-900: #2E2822;
+  --color-gray-950: #1A1612;
+
+  /* Marquee animation */
+  --animate-marquee: marquee 60s linear infinite;
 }
 
 html {
@@ -68,8 +84,7 @@ a:hover {
   border-width: 0;
 }
 
-.sr-only:focus-visible,
-.sr-only:not(:focus-visible) {
+.sr-only:focus-visible {
   position: static;
   width: auto;
   height: auto;
@@ -157,6 +172,15 @@ a:hover {
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
