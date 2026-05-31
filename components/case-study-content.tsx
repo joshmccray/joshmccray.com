@@ -1,12 +1,15 @@
 import Image from "next/image";
+import { Children } from "react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import type { CaseStudy } from "@/lib/markdown";
 import { ImageWithCaption } from "./mdx/image-with-caption";
 import { ImageGrid } from "./mdx/image-grid";
 import { ImageCompare } from "./mdx/image-compare";
 import { ImageGallery } from "./mdx/image-gallery";
+import { FullBleedImage } from "./mdx/full-bleed-image";
 import { Callout } from "./mdx/callout";
 import { SectionDivider } from "./mdx/section-divider";
+import { PhoneMockup } from "./mdx/phone-mockup";
 import { QuickStats } from "./case-study/quick-stats";
 import { ResultsSection } from "./case-study/results-section";
 import { ContentWrapper } from "./content-wrapper";
@@ -15,25 +18,55 @@ interface CaseStudyContentProps {
   caseStudy: CaseStudy;
 }
 
-// Custom MDX components for visual-first layouts
-const mdxComponents = {
-  ImageWithCaption,
-  ImageGrid,
-  ImageCompare,
-  ImageGallery,
-  Callout,
-  SectionDivider,
-  img: (props: any) => (
-    <Image
-      {...props}
-      width={1200}
-      height={800}
-      className="rounded-lg w-full h-auto"
-    />
-  ),
-};
+const BLEED_COLORS = ["#0A1628", "#F5F0E8"] as const;
 
 export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
+  let imageIndex = 0;
+
+  const getNextColor = () => {
+    const color = BLEED_COLORS[imageIndex % BLEED_COLORS.length];
+    imageIndex++;
+    return color;
+  };
+
+  const getTextColor = (bg: string) =>
+    bg === "#0A1628" ? "text-gray-400" : "text-gray-600";
+
+  // Custom MDX components for visual-first layouts
+  const mdxComponents = {
+    ImageWithCaption,
+    ImageGrid,
+    ImageCompare,
+    ImageGallery,
+    Callout,
+    SectionDivider,
+    PhoneMockup: (props: any) => {
+      const bgColor = getNextColor();
+      return <PhoneMockup {...props} bgColor={bgColor} />;
+    },
+    p: ({ children, ...props }: any) => {
+      // MDX wraps standalone images in <p>. Since our img override returns
+      // a block-level FullBleedImage, unwrap the <p> to avoid invalid HTML.
+      const childArray = Children.toArray(children);
+      const hasBlockChild = childArray.some(
+        (child: any) => child?.props?.bgColor !== undefined
+      );
+      if (hasBlockChild) return <>{children}</>;
+      return <p {...props}>{children}</p>;
+    },
+    img: (props: any) => {
+      const bgColor = getNextColor();
+      const textColor = getTextColor(bgColor);
+      return (
+        <FullBleedImage
+          {...props}
+          bgColor={bgColor}
+          textColor={textColor}
+        />
+      );
+    },
+  };
+
   return (
     <div className="max-w-4xl mx-auto">
       {/* Header */}

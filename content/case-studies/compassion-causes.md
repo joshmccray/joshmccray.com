@@ -15,6 +15,16 @@ quickStats:
   solution: "A crowdfunding platform where local churches post causes directly, donors browse and fund specific projects, and every dollar reaches the community."
 ---
 
+<PhoneMockup
+  src1="/case-studies/compassion-causes/phonetest.png"
+  alt1="Compassion Causes mobile homepage"
+  caption1="Browse and discover causes"
+  src2="/case-studies/compassion-causes/phonetest.png"
+  alt2="Compassion Causes mobile filter view"
+  caption2="Filter by category and location"
+  bgColor="#0A1628"
+/>
+
 ![Discovery and Filtering](/case-studies/compassion-causes/Causes-grid.png)
 
 ![Platform Views](/case-studies/compassion-causes/Causes-detailpage.png)
