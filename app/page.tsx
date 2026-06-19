@@ -135,10 +135,10 @@ export default function Home() {
                     key={study.slug}
                     href={`/?modal=${study.slug}`}
                     scroll={false}
-                    className="group flex-shrink-0 h-full"
+                    className="group flex-shrink-0 flex"
                     style={{ scrollSnapAlign: "start" }}
                   >
-                    <article className="w-[280px] h-full flex flex-col border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
+                    <article className="w-[280px] flex flex-col border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
                       {(study.cardImage || study.coverImage) && (
                         <div className="aspect-video bg-gray-100 relative">
                           <Image

@@ -52,6 +52,8 @@ export function Carousel({ children }: CarouselProps) {
       >
         <div className="flex gap-5 items-stretch">
           {children}
+          {/* Trailing spacer so the last card isn't clipped at the scroll end */}
+          <div aria-hidden className="flex-shrink-0 w-1" />
         </div>
       </div>
 
