@@ -1,59 +1,63 @@
+import Link from "next/link";
+
 export function Footer() {
   return (
-    <footer className="border-t border-gray-200 mt-auto">
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex flex-col items-center gap-6 text-center">
-          {/* Email section */}
-          <div>
-            <p className="text-xs text-gray-600 mb-2 font-light">Get in touch</p>
+    <footer className="mt-auto border-t border-[var(--border)]">
+      <div className="mx-auto max-w-6xl px-5 md:px-8 py-14">
+        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-md">
+            <p className="font-[family-name:var(--font-syne)] text-2xl tracking-tight mb-3">
+              Let&apos;s make something worth shipping.
+            </p>
             <a
               href="mailto:hello@joshmccray.com"
-              className="text-sm text-gray-900 hover:text-[var(--accent)] transition-colors font-normal"
+              className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
             >
               hello@joshmccray.com
             </a>
           </div>
 
-          {/* Availability status */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 border border-green-200 rounded-full">
-            <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-            <span className="text-xs text-green-800 font-light">
-              Available for freelance projects
-            </span>
+          <div className="flex flex-col items-start gap-4 md:items-end">
+            <div className="inline-flex items-center gap-2 text-sm text-[var(--muted)]">
+              <span
+                className="h-2 w-2 rounded-full bg-[var(--accent)]"
+                style={{ animation: "pulseDot 2s ease-in-out infinite" }}
+              />
+              Available for select freelance
+            </div>
+            <div className="flex gap-5 text-sm text-[var(--muted)]">
+              <a
+                href="https://github.com/joshmccray"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--foreground)]"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/joshmccray"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--foreground)]"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://x.com/_joshmccray"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--foreground)]"
+              >
+                X
+              </a>
+              <Link href="/contact" className="hover:text-[var(--foreground)]">
+                Contact
+              </Link>
+            </div>
+            <p className="text-xs text-[var(--muted)]/70">
+              © {new Date().getFullYear()} Josh McCray
+            </p>
           </div>
-
-          {/* Social links */}
-          <div className="flex gap-6">
-            <a
-              href="https://github.com/joshmccray"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://linkedin.com/in/joshmccray"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://twitter.com/joshmccray"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light"
-            >
-              Twitter
-            </a>
-          </div>
-
-          {/* Copyright */}
-          <p className="text-xs text-gray-500 font-light">
-            © {new Date().getFullYear()} Josh McCray. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>

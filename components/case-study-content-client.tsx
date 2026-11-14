@@ -55,12 +55,17 @@ export function CaseStudyContentClient({ caseStudy }: CaseStudyContentClientProp
     <div className="max-w-4xl mx-auto">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-normal tracking-tight mb-4">{caseStudy.title}</h1>
+        <p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)] mb-3">
+          {caseStudy.client}
+          <span className="mx-2 opacity-40">·</span>
+          {caseStudy.role}
+        </p>
+        <h1 className="text-3xl md:text-5xl tracking-tight mb-5">{caseStudy.title}</h1>
         <div className="flex flex-wrap gap-2">
           {caseStudy.tags?.map((tag) => (
             <span
               key={tag}
-              className="text-[10px] px-2 py-0.5 border border-gray-200 rounded-full text-gray-400 font-light uppercase tracking-wider"
+              className="text-[10px] px-2.5 py-1 border border-[var(--border)] text-[var(--muted)] uppercase tracking-wider"
             >
               {tag}
             </span>

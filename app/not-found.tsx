@@ -2,25 +2,30 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="container mx-auto px-4 py-32">
-      <div className="max-w-2xl mx-auto text-center">
-        <h1 className="text-6xl font-normal mb-6 tracking-tight text-gray-300">404</h1>
-        <h2 className="text-2xl font-normal mb-4 tracking-tight">Page Not Found</h2>
-        <p className="text-sm text-gray-600 mb-8 leading-relaxed font-light">
-          Sorry, the page you're looking for doesn't exist or has been moved.
+    <div className="mx-auto max-w-6xl px-5 md:px-8 py-32 md:py-40">
+      <div className="max-w-xl">
+        <p className="text-xs uppercase tracking-[0.2em] text-[var(--muted)] mb-4">
+          404
         </p>
-        <div className="flex gap-3 justify-center flex-wrap">
+        <h1 className="text-4xl md:text-6xl tracking-tight mb-5">
+          Page not found
+        </h1>
+        <p className="text-[var(--muted)] mb-8 leading-relaxed">
+          Sorry, the page you&apos;re looking for doesn&apos;t exist or has been
+          moved.
+        </p>
+        <div className="flex flex-wrap gap-3">
           <Link
             href="/"
-            className="bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 shadow-sm hover:shadow-md font-normal"
+            className="inline-flex items-center justify-center bg-[var(--accent)] text-white px-5 py-3 text-sm font-medium rounded-md hover:bg-[var(--accent-hover)] transition-colors"
           >
-            Go Home
+            Go home
           </Link>
           <Link
             href="/case-studies"
-            className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
+            className="inline-flex items-center justify-center border border-[var(--border)] px-5 py-3 text-sm font-medium rounded-md hover:bg-white/60 transition-colors"
           >
-            View Case Studies
+            View work
           </Link>
         </div>
       </div>

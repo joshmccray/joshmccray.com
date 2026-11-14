@@ -26,16 +26,19 @@ export default function ShufflePage() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-20">
-      <div className="max-w-3xl mb-16">
-        <h1 className="text-4xl font-normal tracking-tight mb-4">Shuffle</h1>
-        <p className="text-sm text-gray-600 font-light">
+    <div className="mx-auto max-w-6xl px-5 md:px-8 py-16 md:py-24">
+      <div className="max-w-2xl mb-14 md:mb-16">
+        <p className="text-xs uppercase tracking-[0.2em] text-[var(--muted)] mb-4">
+          Archive
+        </p>
+        <h1 className="text-4xl md:text-6xl tracking-tight mb-5">Shuffle</h1>
+        <p className="text-lg text-[var(--muted)] leading-relaxed">
           A random walk through logos, screenshots, illustrations, and other
           design artifacts. Hit shuffle to see what comes up.
         </p>
       </div>
 
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-3xl">
         <div
           style={{
             animation: isAnimating
@@ -43,37 +46,38 @@ export default function ShufflePage() {
               : "shuffleIn 400ms ease-out forwards",
           }}
         >
-          <div className="aspect-video relative rounded-lg overflow-hidden bg-gray-100">
+          <div className="aspect-video relative overflow-hidden bg-gray-200">
             <Image
               src={currentItem.imagePath}
               alt={currentItem.title}
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
             />
           </div>
 
-          <div className="pt-6">
-            <h2 className="text-sm font-normal">{currentItem.title}</h2>
-            <p className="text-xs text-gray-600 font-light mt-1">
+          <div className="pt-7">
+            <h2 className="text-2xl tracking-tight">{currentItem.title}</h2>
+            <p className="text-[var(--muted)] mt-2 leading-relaxed">
               {currentItem.description}
             </p>
 
-            <div className="flex gap-2 flex-wrap mt-3">
+            <div className="flex gap-2 flex-wrap mt-4">
               {currentItem.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full font-light"
+                  className="text-xs text-[var(--muted)] border border-[var(--border)] px-2.5 py-1"
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            <div className="flex gap-4 mt-3">
+            <div className="flex gap-5 mt-5">
               {currentItem.projectUrl && (
                 <Link
                   href={currentItem.projectUrl}
-                  className="text-xs text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
+                  className="text-sm text-[var(--accent)] hover:underline"
                 >
                   View project →
                 </Link>
@@ -83,7 +87,7 @@ export default function ShufflePage() {
                   href={currentItem.dribbbleUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-gray-500 hover:text-[var(--accent)] transition-colors"
+                  className="text-sm text-[var(--muted)] hover:text-[var(--accent)]"
                 >
                   View on Dribbble →
                 </a>
@@ -92,20 +96,19 @@ export default function ShufflePage() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col items-center gap-4">
+        <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
           <button
             onClick={handleShuffle}
             disabled={isAnimating}
-            className="bg-[var(--accent)] text-white px-6 py-3 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 shadow-sm hover:shadow-md font-normal disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+            className="bg-[var(--accent)] text-white px-6 py-3 text-sm font-medium rounded-md hover:bg-[var(--accent-hover)] transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]"
           >
-            🎲 Shuffle
+            Shuffle again
           </button>
-
-          <span className="text-xs text-gray-500 font-light">
+          <span className="text-sm text-[var(--muted)] tabular-nums">
             {currentIndex + 1} of {shuffleItems.length}
           </span>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

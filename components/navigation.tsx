@@ -1,74 +1,81 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const links = [
+  { href: "/case-studies", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Writing" },
+  { href: "/shuffle", label: "Shuffle" },
+  { href: "/contact", label: "Contact" },
+];
 
 export function Navigation() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isHome = pathname === "/";
 
   const isActive = (path: string) => {
-    if (path === '/') {
-      return pathname === '/';
-    }
+    if (path === "/") return pathname === "/";
     return pathname.startsWith(path);
   };
 
-  const linkClass = (path: string) => {
-    const base = "text-sm transition-colors font-light block py-3";
-    return isActive(path)
-      ? `${base} text-[var(--accent)]`
-      : `${base} text-gray-600 hover:text-[var(--accent)]`;
-  };
-
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
-  };
+  const handleLinkClick = () => setIsMenuOpen(false);
 
   return (
-    <nav className="border-b border-gray-200 bg-[var(--background)]/80 backdrop-blur-sm sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <Link
-            href="/"
-            className={`transition-colors ${
-              isActive('/') && pathname === '/'
-                ? 'text-[var(--accent)]'
-                : 'hover:text-[var(--accent)]'
-            }`}
-          >
-            <div>
-              <div className="text-sm font-normal tracking-tight text-gray-900">
-                Josh McCray
-              </div>
-              <div className="text-xs text-gray-500 font-light">
-                Product Designer
-              </div>
-            </div>
+    <nav
+      className={`sticky top-0 z-50 transition-colors ${
+        isHome
+          ? "bg-[var(--background)]/70 backdrop-blur-md border-b border-transparent"
+          : "bg-[var(--background)]/85 backdrop-blur-md border-b border-[var(--border)]"
+      }`}
+    >
+      <div className="mx-auto max-w-6xl px-5 md:px-8 py-4">
+        <div className="flex items-center justify-between gap-6">
+          <Link href="/" className="group min-w-0" onClick={handleLinkClick}>
+            <span className="font-[family-name:var(--font-syne)] text-lg font-bold tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
+              Josh McCray
+            </span>
           </Link>
 
-          {/* Hamburger button */}
+          <div className="hidden md:flex items-center gap-8">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm transition-colors ${
+                  isActive(link.href)
+                    ? "text-[var(--accent)]"
+                    : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="w-10 h-10 flex items-center justify-center hover:bg-gray-50 rounded-lg transition-colors"
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-md hover:bg-black/5 transition-colors"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
-            <div className="w-5 h-4 flex flex-col justify-between">
+            <div className="w-5 h-3.5 flex flex-col justify-between">
               <span
-                className={`block h-0.5 w-full bg-gray-900 transition-all duration-300 ${
-                  isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+                className={`block h-[1.5px] w-full bg-[var(--foreground)] transition-all duration-300 origin-center ${
+                  isMenuOpen ? "rotate-45 translate-y-[6px]" : ""
                 }`}
               />
               <span
-                className={`block h-0.5 w-full bg-gray-900 transition-all duration-300 ${
-                  isMenuOpen ? 'opacity-0' : ''
+                className={`block h-[1.5px] w-full bg-[var(--foreground)] transition-all duration-300 ${
+                  isMenuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`block h-0.5 w-full bg-gray-900 transition-all duration-300 ${
-                  isMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                className={`block h-[1.5px] w-full bg-[var(--foreground)] transition-all duration-300 origin-center ${
+                  isMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""
                 }`}
               />
             </div>
@@ -76,57 +83,31 @@ export function Navigation() {
         </div>
       </div>
 
-      {/* Menu dropdown */}
       {isMenuOpen && (
         <div
-          className="border-t border-gray-200 bg-[var(--background)] overflow-hidden"
-          style={{
-            animation: 'slideDown 300ms ease-out forwards'
-          }}
+          className="md:hidden border-t border-[var(--border)] bg-[var(--background)] overflow-hidden"
+          style={{ animation: "slideDown 300ms ease-out forwards" }}
         >
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex flex-col">
+          <div className="mx-auto max-w-6xl px-5 py-3 flex flex-col">
+            {links.map((link, index) => (
               <Link
-                href="/about"
-                className={linkClass('/about')}
+                key={link.href}
+                href={link.href}
                 onClick={handleLinkClick}
-                style={{ animation: 'fadeInUp 400ms ease-out forwards', animationDelay: '50ms', opacity: 0 }}
+                className={`py-3 text-base ${
+                  isActive(link.href)
+                    ? "text-[var(--accent)]"
+                    : "text-[var(--muted)]"
+                }`}
+                style={{
+                  animation: "fadeInUp 400ms ease-out forwards",
+                  animationDelay: `${50 + index * 50}ms`,
+                  opacity: 0,
+                }}
               >
-                About
+                {link.label}
               </Link>
-              <Link
-                href="/case-studies"
-                className={linkClass('/case-studies')}
-                onClick={handleLinkClick}
-                style={{ animation: 'fadeInUp 400ms ease-out forwards', animationDelay: '100ms', opacity: 0 }}
-              >
-                Case Studies
-              </Link>
-              <Link
-                href="/blog"
-                className={linkClass('/blog')}
-                onClick={handleLinkClick}
-                style={{ animation: 'fadeInUp 400ms ease-out forwards', animationDelay: '150ms', opacity: 0 }}
-              >
-                Blog
-              </Link>
-              <Link
-                href="/shuffle"
-                className={linkClass('/shuffle')}
-                onClick={handleLinkClick}
-                style={{ animation: 'fadeInUp 400ms ease-out forwards', animationDelay: '200ms', opacity: 0 }}
-              >
-                Shuffle
-              </Link>
-              <Link
-                href="/contact"
-                className={linkClass('/contact')}
-                onClick={handleLinkClick}
-                style={{ animation: 'fadeInUp 400ms ease-out forwards', animationDelay: '250ms', opacity: 0 }}
-              >
-                Contact
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
       )}

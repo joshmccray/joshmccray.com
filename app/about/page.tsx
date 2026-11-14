@@ -3,139 +3,144 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About - Josh McCray",
-  description: "Senior Product Designer with 10+ years of experience creating exceptional digital experiences across e-commerce, nonprofit, and early-stage tech sectors.",
+  title: "About — Josh McCray",
+  description:
+    "Senior Product Designer with 10+ years of experience creating exceptional digital experiences across e-commerce, nonprofit, and early-stage tech sectors.",
 };
+
+const experience = [
+  {
+    role: "Senior Product Designer",
+    company: "Come Near",
+    dates: "Apr 2025 – Present",
+    detail:
+      "Designing digital products focused on raising meaningful public conversations through thoughtful, user-centered experiences.",
+  },
+  {
+    role: "Senior User Experience Architect",
+    company: "Compassion International",
+    dates: "Apr 2022 – Apr 2025",
+    detail:
+      "Lead Product Designer for Compassion Causes, a 0→1 product connecting people with community-led initiatives. Drove research, design strategy, and implementation across web and mobile.",
+  },
+  {
+    role: "Manager, Interactive & UX Design",
+    company: "Jockey International",
+    dates: "Oct 2021 – Apr 2022",
+    detail:
+      "Led the User Experience and Web Design team, establishing design processes and standards for the e-commerce platform.",
+  },
+  {
+    role: "Lecturer — Interactive Design",
+    company: "University of Wisconsin–Parkside",
+    dates: "Sep 2020 – Oct 2021",
+    detail:
+      "Taught Interactive Design I & II, mentoring students in user-centered design principles and web design fundamentals.",
+  },
+];
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-20">
-        {/* Hero Section */}
-        <section className="mb-24">
-          <div className="flex flex-col md:flex-row gap-8 items-start mb-8">
-            <div className="flex-shrink-0">
-              <Image
-                src="/pfp.webp"
-                alt="Josh McCray"
-                width={192}
-                height={192}
-                className="w-48 h-48 rounded-full object-cover"
-                priority
-              />
-            </div>
-            <div className="flex-1">
-              <h1 className="text-4xl font-normal mb-3 tracking-tight">
-                Josh McCray
-              </h1>
-              <p className="text-sm text-gray-600 mb-2 font-light">
-                Senior Product Designer @ Come Near
-              </p>
-              <p className="text-xs text-gray-500 font-light">
-                Greater Chicago Area (Remote)
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Bio Section */}
-        <section className="mb-24">
-          <h2 className="text-lg font-normal mb-6 tracking-tight">About Me</h2>
-          <div className="space-y-4">
-            <p className="text-sm text-gray-700 leading-relaxed font-light">
-              I&apos;m a Senior Product Designer with over a decade of experience creating exceptional digital experiences across e-commerce, nonprofit, and early-stage tech sectors. Currently at Come Near, I&apos;m focused on raising meaningful public conversations through thoughtfully designed digital products. My journey has taken me from designing high-traffic e-commerce experiences at Jockey International to leading product design initiatives at Compassion International, where I developed new product experiences that connect people with meaningful causes.
-            </p>
-            <p className="text-sm text-gray-700 leading-relaxed font-light">
-              With a passion for visual design and branding, I specialize in crafting cohesive product experiences that balance user needs with business objectives. My approach combines deep user empathy with technical expertise—I believe the best design solutions emerge when designers understand both the human experience and the technical constraints. Having led design teams and worked alongside developers throughout my career, I excel at bridging the gap between design vision and technical implementation.
-            </p>
-            <p className="text-sm text-gray-700 leading-relaxed font-light">
-              What sets me apart is my hybrid skill set: I&apos;m equally comfortable conducting user research, creating high-fidelity designs, and writing front-end code. I&apos;ve built and maintained design systems, led UX teams, and mentored emerging designers and developers through programs like Out of Office Hours. I also taught Interactive Design at the University of Wisconsin-Parkside, sharing my passion for creating intuitive, user-centered digital experiences with the next generation of designers.
-            </p>
-          </div>
-        </section>
-
-        {/* Career Timeline Section */}
-        <section className="mb-24">
-          <h2 className="text-lg font-normal mb-6 tracking-tight">Experience</h2>
-          <div className="space-y-6">
-            <div className="border-l-2 border-gray-200 pl-4">
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-sm font-normal text-gray-900">Senior Product Designer</h3>
-                  <p className="text-xs text-gray-600 font-light">Come Near</p>
-                </div>
-                <span className="text-xs text-gray-500 font-light">Apr 2025 - Present</span>
-              </div>
-              <p className="text-xs text-gray-600 font-light leading-relaxed">
-                Designing digital products focused on raising meaningful public conversations through thoughtful, user-centered experiences.
-              </p>
-            </div>
-
-            <div className="border-l-2 border-gray-200 pl-4">
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-sm font-normal text-gray-900">Senior User Experience Architect</h3>
-                  <p className="text-xs text-gray-600 font-light">Compassion International</p>
-                </div>
-                <span className="text-xs text-gray-500 font-light">Apr 2022 - Apr 2025</span>
-              </div>
-              <p className="text-xs text-gray-600 font-light leading-relaxed">
-                Lead Product Designer for Compassion Causes, a new product experience connecting people with meaningful nonprofit initiatives. Drove user research, design strategy, and implementation across web and mobile platforms.
-              </p>
-            </div>
-
-            <div className="border-l-2 border-gray-200 pl-4">
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-sm font-normal text-gray-900">Manager, Interactive & UX Design</h3>
-                  <p className="text-xs text-gray-600 font-light">Jockey International</p>
-                </div>
-                <span className="text-xs text-gray-500 font-light">Oct 2021 - Apr 2022</span>
-              </div>
-              <p className="text-xs text-gray-600 font-light leading-relaxed">
-                Led the User Experience and Web Design team, establishing design processes and standards for the e-commerce platform.
-              </p>
-            </div>
-
-            <div className="border-l-2 border-gray-200 pl-4">
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-sm font-normal text-gray-900">Lecturer - Interactive Design</h3>
-                  <p className="text-xs text-gray-600 font-light">University of Wisconsin-Parkside</p>
-                </div>
-                <span className="text-xs text-gray-500 font-light">Sep 2020 - Oct 2021</span>
-              </div>
-              <p className="text-xs text-gray-600 font-light leading-relaxed">
-                Taught Interactive Design I & II, mentoring students in user-centered design principles and web design fundamentals.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="border-t border-gray-200 pt-12 text-center">
-          <h2 className="text-lg font-normal mb-3 tracking-tight">
-            Let&apos;s Work Together
-          </h2>
-          <p className="text-xs text-gray-600 mb-6 font-light max-w-2xl mx-auto">
-            Interested in collaborating on your next product? Let's chat!
+    <div className="mx-auto max-w-6xl px-5 md:px-8 py-16 md:py-24">
+      <section className="grid md:grid-cols-[auto_1fr] gap-10 md:gap-16 items-start mb-20 md:mb-28">
+        <Image
+          src="/pfp.webp"
+          alt="Josh McCray"
+          width={220}
+          height={220}
+          className="w-40 h-40 md:w-52 md:h-52 object-cover rounded-sm"
+          priority
+        />
+        <div className="max-w-2xl">
+          <p className="text-xs uppercase tracking-[0.2em] text-[var(--muted)] mb-4">
+            About
           </p>
-          <div className="flex gap-3 justify-center flex-wrap">
-            <Link
-              href="/contact"
-              className="bg-[var(--accent)] text-white px-6 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 font-normal"
+          <h1 className="text-4xl md:text-6xl tracking-tight mb-5">
+            Josh McCray
+          </h1>
+          <p className="text-lg text-[var(--muted)] mb-2">
+            Senior Product Designer @ Come Near
+          </p>
+          <p className="text-sm text-[var(--muted)]">
+            Greater Chicago Area · Remote
+          </p>
+        </div>
+      </section>
+
+      <section className="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16 mb-24 md:mb-32">
+        <h2 className="text-2xl tracking-tight">The short version</h2>
+        <div className="space-y-5 text-[var(--muted)] leading-relaxed max-w-2xl">
+          <p>
+            I&apos;m a Senior Product Designer with over a decade of experience
+            creating digital experiences across e-commerce, nonprofit, and
+            early-stage tech. At Come Near, I focus on products that raise
+            meaningful public conversations. Before that I led product design at
+            Compassion International and UX for Jockey&apos;s e-commerce
+            platform.
+          </p>
+          <p>
+            I specialize in cohesive product experiences that balance user needs
+            with business goals. My approach pairs deep user empathy with
+            technical fluency—the best solutions show up when designers
+            understand both the human experience and the constraints of shipping.
+          </p>
+          <p>
+            What sets me apart is a hybrid skill set: research, high-fidelity
+            design, and front-end code. I&apos;ve built design systems, led UX
+            teams, mentored through Out of Office Hours, and taught Interactive
+            Design at UW–Parkside.
+          </p>
+        </div>
+      </section>
+
+      <section className="mb-24 md:mb-32">
+        <h2 className="text-2xl tracking-tight mb-10">Experience</h2>
+        <ul className="divide-y divide-[var(--border)] border-y border-[var(--border)]">
+          {experience.map((job) => (
+            <li
+              key={`${job.company}-${job.role}`}
+              className="grid md:grid-cols-[1.2fr_0.8fr_1.6fr] gap-2 md:gap-8 py-7"
             >
-              Get in Touch
-            </Link>
-            <a
-              href="https://www.linkedin.com/in/joshmccray"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-gray-300 px-6 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
-            >
-              View LinkedIn
-            </a>
-          </div>
-        </section>
-      </div>
+              <div>
+                <h3 className="tracking-tight text-lg">{job.role}</h3>
+                <p className="text-[var(--muted)] text-sm mt-1">{job.company}</p>
+              </div>
+              <p className="text-sm text-[var(--muted)] tabular-nums md:pt-1">
+                {job.dates}
+              </p>
+              <p className="text-sm text-[var(--muted)] leading-relaxed md:pt-1">
+                {job.detail}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="border-t border-[var(--border)] pt-14">
+        <h2 className="text-3xl md:text-4xl tracking-tight mb-4 max-w-lg">
+          Let&apos;s work together
+        </h2>
+        <p className="text-[var(--muted)] mb-8 max-w-md">
+          Interested in collaborating on your next product? I&apos;d love to
+          hear what you&apos;re building.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center bg-[var(--accent)] text-white px-5 py-3 text-sm font-medium rounded-md hover:bg-[var(--accent-hover)] transition-colors"
+          >
+            Get in touch
+          </Link>
+          <a
+            href="https://www.linkedin.com/in/joshmccray"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center border border-[var(--border)] px-5 py-3 text-sm font-medium rounded-md hover:bg-white/60 transition-colors"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </section>
+    </div>
   );
 }

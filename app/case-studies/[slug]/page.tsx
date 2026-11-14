@@ -46,7 +46,7 @@ export default async function CaseStudyPage({ params }: Props) {
   const nextStudy = currentIndex < allCaseStudies.length - 1 ? allCaseStudies[currentIndex + 1] : undefined;
 
   return (
-    <article className="container mx-auto px-4 py-16">
+    <article className="mx-auto max-w-6xl px-5 md:px-8 py-16 md:py-20">
       <CaseStudyContent caseStudy={caseStudy} />
       <CaseStudyPagination previous={previousStudy} next={nextStudy} />
     </article>

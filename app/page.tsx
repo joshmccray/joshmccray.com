@@ -2,269 +2,271 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllBlogPosts, getAllCaseStudies } from "@/lib/markdown";
 import { CaseStudyModalWrapper } from "@/components/case-study-modal-wrapper";
-import { Carousel } from "@/components/carousel";
 import { vibeProjects } from "@/lib/vibe-projects";
 
 export default function Home() {
   const allCaseStudies = getAllCaseStudies();
-  const featured = allCaseStudies.slice(0, 3);
-  const remaining = allCaseStudies.slice(3);
-  const blogPosts = getAllBlogPosts().slice(0, 3);
+  const featured = allCaseStudies.slice(0, 4);
+  const blogPosts = getAllBlogPosts().slice(0, 2);
+  const heroStudy = allCaseStudies[0];
+  const heroImage =
+    heroStudy?.coverImage ||
+    heroStudy?.cardImage ||
+    "/case-studies/compassion-causes/Causes-hero.png";
 
   return (
     <CaseStudyModalWrapper caseStudies={allCaseStudies}>
-      <div className="container mx-auto px-4 py-20">
-        <section className="max-w-3xl mb-32">
-        <div className="flex flex-col md:flex-row gap-8 items-start">
-          <div className="flex-shrink-0">
-            <Image
-              src="/pfp.webp"
-              alt="Josh McCray"
-              width={120}
-              height={120}
-              className="w-[120px] h-[120px] rounded-full object-cover"
-              priority
-            />
-          </div>
-          <div className="flex-1">
-            <h1 className="text-4xl font-normal mb-6 tracking-tight">
-              Hi, I&apos;m Josh McCray
-            </h1>
-            <p className="text-sm text-gray-600 mb-4 leading-relaxed font-light">
-              Senior Product Designer with 10+ years of experience creating exceptional digital experiences. I specialize in user experience design, visual design, and product development—with expertise spanning e-commerce, nonprofit, and early-stage tech sectors.
-            </p>
-
-            <div className="flex gap-3 items-center flex-wrap">
-              <Link
-                href="/case-studies"
-                className="bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 shadow-sm hover:shadow-md font-normal"
-              >
-                View Case Studies
-              </Link>
-              <Link
-                href="/about"
-                className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
-              >
-                About Me
-              </Link>
-              <Link
-                href="/contact"
-                className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
-              >
-                Get in Touch
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Worked With Section */}
-      <section className="mb-32 -mx-4 px-4 py-12 bg-gray-100/50 rounded-2xl border border-gray-200/50">
-        <p className="text-xs text-gray-500 mb-8 font-light uppercase tracking-wide text-center">Worked with</p>
-        <div className="flex items-center justify-center gap-12 md:gap-16 flex-wrap">
+      {/* Hero — one composition: brand, line, CTA, dominant work image */}
+      <section className="relative min-h-[min(92vh,920px)] flex items-end overflow-hidden">
+        <div className="absolute inset-0 hero-media">
           <Image
-            src="/Compassion-logo.svg"
-            alt="Compassion International"
-            width={140}
-            height={40}
-            className="h-8 w-auto opacity-50 hover:opacity-90 transition-opacity"
+            src={heroImage}
+            alt=""
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
           />
-          <Image
-            src="/Dwell-logo.svg"
-            alt="Dwell"
-            width={100}
-            height={40}
-            className="h-7 w-auto opacity-50 hover:opacity-90 transition-opacity"
-          />
-          <Image
-            src="/Jockey-logo.svg"
-            alt="Jockey"
-            width={100}
-            height={40}
-            className="h-6 w-auto opacity-50 hover:opacity-90 transition-opacity"
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(8,14,24,0.35) 0%, rgba(8,14,24,0.55) 45%, rgba(8,14,24,0.88) 100%)",
+            }}
+            aria-hidden
           />
         </div>
-      </section>
 
-      {featured.length > 0 && (
-        <section className="mb-32 overflow-hidden">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-lg font-normal tracking-tight">Featured Case Studies</h2>
-            <Link href="/case-studies" className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light">
-              View all →
+        <div className="relative z-10 w-full mx-auto max-w-6xl px-5 md:px-8 pb-14 md:pb-20 pt-32">
+          <p className="reveal text-sm uppercase tracking-[0.22em] text-[var(--hero-muted)] mb-5">
+            Product Designer
+          </p>
+          <h1 className="reveal reveal-delay-1 font-[family-name:var(--font-syne)] text-[clamp(3.25rem,10vw,7.5rem)] font-extrabold tracking-[-0.04em] leading-[0.92] text-[var(--hero-ink)] max-w-4xl mb-6">
+            Josh McCray
+          </h1>
+          <p className="reveal reveal-delay-2 text-base md:text-lg text-[var(--hero-muted)] max-w-xl mb-9 leading-relaxed">
+            I design digital products that connect people to purpose—across
+            nonprofit, e-commerce, and early-stage work.
+          </p>
+          <div className="reveal reveal-delay-3 flex flex-wrap gap-3">
+            <a
+              href="#work"
+              className="inline-flex items-center justify-center bg-[var(--hero-ink)] text-[var(--foreground)] px-5 py-3 text-sm font-medium rounded-md hover:bg-white transition-colors"
+            >
+              View selected work
+            </a>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center border border-white/30 text-[var(--hero-ink)] px-5 py-3 text-sm font-medium rounded-md hover:bg-white/10 transition-colors"
+            >
+              Get in touch
             </Link>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featured.map((study) => (
-              <Link
-                key={study.slug}
-                href={`/?modal=${study.slug}`}
-                scroll={false}
-                className="group h-full"
-              >
-                <article className="h-full flex flex-col border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
-                  {(study.cardImage || study.coverImage) && (
-                    <div className="aspect-video bg-gray-100 relative">
-                      <Image
-                        src={study.cardImage || study.coverImage!}
-                        alt={study.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  )}
-                  <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-sm font-normal mb-2 group-hover:text-[var(--accent)] transition-colors">
-                      {study.title}
-                    </h3>
-                    <p className="text-gray-600 text-xs mb-3 font-light">{study.client} • {study.role}</p>
-                    <p className="text-gray-700 text-xs line-clamp-3 leading-relaxed font-light">{study.excerpt}</p>
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </div>
+        </div>
+      </section>
 
-          {/* More Projects — Carousel */}
-          {remaining.length > 0 && (
-            <div className="mt-12">
-              <h3 className="text-sm font-normal tracking-tight mb-6 text-gray-500">More Projects</h3>
-              <Carousel>
-                {remaining.map((study) => (
-                  <Link
-                    key={study.slug}
-                    href={`/?modal=${study.slug}`}
-                    scroll={false}
-                    className="group flex-shrink-0 flex"
-                    style={{ scrollSnapAlign: "start" }}
-                  >
-                    <article className="w-[280px] flex flex-col border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
-                      {(study.cardImage || study.coverImage) && (
-                        <div className="aspect-video bg-gray-100 relative">
-                          <Image
-                            src={study.cardImage || study.coverImage!}
-                            alt={study.title}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                      )}
-                      <div className="p-5">
-                        <h3 className="text-sm font-normal mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug">
-                          {study.title}
-                        </h3>
-                        <p className="text-gray-500 text-xs font-light">{study.client}</p>
-                      </div>
-                    </article>
-                  </Link>
-                ))}
-              </Carousel>
-            </div>
-          )}
-        </section>
-      )}
-
-      {vibeProjects.length > 0 && (
-        <section className="mb-32">
-          <div className="mb-8">
-            <h2 className="text-lg font-normal mb-3 tracking-tight">Vibe Coded Projects</h2>
-            <p className="text-xs text-gray-600 max-w-2xl leading-relaxed font-light">
-              Experimental projects and side builds where I explore new technologies,
-              play with creative ideas, and code for the joy of it.
+      {/* Selected work — editorial strips, not cards */}
+      <section id="work" className="mx-auto max-w-6xl px-5 md:px-8 py-24 md:py-32">
+        <div className="flex items-end justify-between gap-6 mb-14 md:mb-16">
+          <div>
+            <h2 className="text-3xl md:text-4xl tracking-tight mb-3">
+              Selected work
+            </h2>
+            <p className="text-[var(--muted)] max-w-md">
+              Product design from 0→1 platforms to systems, marketing, and
+              brand-adjacent experiences.
             </p>
           </div>
-          <div className="space-y-1">
-            {vibeProjects.map((project, index) => (
-              <a
-                key={project.id}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block py-6 border-b border-gray-200 hover:bg-gray-50 transition-all duration-200 -mx-4 px-4 rounded-lg"
+          <Link
+            href="/case-studies"
+            className="hidden sm:inline text-sm text-[var(--muted)] hover:text-[var(--accent)] shrink-0"
+          >
+            All case studies →
+          </Link>
+        </div>
+
+        <div className="flex flex-col">
+          {featured.map((study, index) => (
+            <Link
+              key={study.slug}
+              href={`/?modal=${study.slug}`}
+              scroll={false}
+              className="work-row group border-t border-[var(--border)] py-10 md:py-14 last:border-b"
+            >
+              <article
+                className={`grid gap-8 md:gap-12 items-center ${
+                  index % 2 === 0
+                    ? "md:grid-cols-[1.15fr_0.85fr]"
+                    : "md:grid-cols-[0.85fr_1.15fr]"
+                }`}
               >
-                <div className="flex items-start justify-between gap-6">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="text-sm font-normal group-hover:text-[var(--accent)] transition-colors">
-                        {project.title}
-                      </h3>
-                      <svg
-                        className="w-3 h-3 text-gray-400 group-hover:text-[var(--accent)] transition-colors flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </div>
-                    <p className="text-gray-600 text-xs mb-2 leading-relaxed font-light">
-                      {project.description}
-                    </p>
-                    {project.tech && project.tech.length > 0 && (
-                      <div className="flex gap-2 flex-wrap">
-                        {project.tech.map((tech) => (
-                          <span
-                            key={tech}
-                            className="text-xs text-gray-500 font-light"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                  {project.year && (
-                    <div className="text-xs text-gray-400 tabular-nums flex-shrink-0 font-light">
-                      {project.year}
-                    </div>
+                <div
+                  className={`relative aspect-[16/10] overflow-hidden bg-gray-200 ${
+                    index % 2 === 1 ? "md:order-2" : ""
+                  }`}
+                >
+                  {(study.cardImage || study.coverImage) && (
+                    <Image
+                      src={study.cardImage || study.coverImage!}
+                      alt={study.title}
+                      fill
+                      className="work-image object-cover"
+                      sizes="(max-width: 768px) 100vw, 60vw"
+                    />
                   )}
                 </div>
-              </a>
-            ))}
+                <div className={index % 2 === 1 ? "md:order-1" : ""}>
+                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)] mb-3">
+                    {study.client}
+                    <span className="mx-2 opacity-40">·</span>
+                    {study.role}
+                  </p>
+                  <h3 className="text-2xl md:text-3xl tracking-tight mb-4 group-hover:text-[var(--accent)] transition-colors">
+                    {study.title}
+                  </h3>
+                  <p className="text-[var(--muted)] leading-relaxed mb-5 max-w-md">
+                    {study.excerpt}
+                  </p>
+                  <span className="text-sm text-[var(--accent)] inline-flex items-center gap-2">
+                    View case study
+                    <span className="transition-transform group-hover:translate-x-1">
+                      →
+                    </span>
+                  </span>
+                </div>
+              </article>
+            </Link>
+          ))}
+        </div>
+
+        <div className="sm:hidden mt-8">
+          <Link
+            href="/case-studies"
+            className="text-sm text-[var(--muted)] hover:text-[var(--accent)]"
+          >
+            All case studies →
+          </Link>
+        </div>
+      </section>
+
+      {/* Quiet client line — not a logo strip box */}
+      <section className="border-y border-[var(--border)] bg-white/40">
+        <div className="mx-auto max-w-6xl px-5 md:px-8 py-10 md:py-12">
+          <p className="text-sm text-[var(--muted)]">
+            <span className="text-[var(--foreground)] font-medium">
+              Previously with
+            </span>{" "}
+            Compassion International, Dwell, Jockey International — now designing
+            at Come Near.
+          </p>
+        </div>
+      </section>
+
+      {/* Experiments */}
+      {vibeProjects.length > 0 && (
+        <section className="mx-auto max-w-6xl px-5 md:px-8 py-24 md:py-28">
+          <div className="mb-12 max-w-xl">
+            <h2 className="text-3xl md:text-4xl tracking-tight mb-3">
+              Experiments
+            </h2>
+            <p className="text-[var(--muted)]">
+              Side builds where I explore ideas, ship for fun, and stay close to
+              the craft of making.
+            </p>
           </div>
+          <ul className="divide-y divide-[var(--border)] border-y border-[var(--border)]">
+            {vibeProjects.map((project) => (
+              <li key={project.id}>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 py-6 hover:bg-white/50 -mx-3 px-3 transition-colors"
+                >
+                  <span className="sm:w-48 shrink-0 font-[family-name:var(--font-syne)] text-lg tracking-tight group-hover:text-[var(--accent)] transition-colors">
+                    {project.title}
+                  </span>
+                  <span className="flex-1 text-[var(--muted)] text-sm md:text-base">
+                    {project.description}
+                  </span>
+                  <span className="text-xs tabular-nums text-[var(--muted)]/70 shrink-0">
+                    {project.year}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 
+      {/* Writing teaser */}
       {blogPosts.length > 0 && (
-        <section>
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-lg font-normal tracking-tight">Latest Posts</h2>
-            <Link href="/blog" className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light">
-              View all →
+        <section className="mx-auto max-w-6xl px-5 md:px-8 pb-24 md:pb-32">
+          <div className="flex items-end justify-between gap-6 mb-10">
+            <h2 className="text-3xl md:text-4xl tracking-tight">Writing</h2>
+            <Link
+              href="/blog"
+              className="text-sm text-[var(--muted)] hover:text-[var(--accent)]"
+            >
+              All posts →
             </Link>
           </div>
-          <div className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {blogPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block"
+                className="group block border-t border-[var(--border)] pt-6"
               >
-                <article className="border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-sm font-normal mb-2 group-hover:text-[var(--accent)] transition-colors">
-                        {post.title}
-                      </h3>
-                      <p className="text-xs text-gray-700 mb-3 leading-relaxed font-light">{post.excerpt}</p>
-                      <div className="flex gap-3 text-xs text-gray-500 font-light">
-                        <time>{new Date(post.date).toLocaleDateString()}</time>
-                        <span>{post.readingTime}</span>
-                      </div>
-                    </div>
-                  </div>
-                </article>
+                <time className="text-xs uppercase tracking-[0.16em] text-[var(--muted)]">
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                  <span className="mx-2 opacity-40">·</span>
+                  {post.readingTime}
+                </time>
+                <h3 className="mt-3 text-xl tracking-tight group-hover:text-[var(--accent)] transition-colors">
+                  {post.title}
+                </h3>
+                <p className="mt-2 text-[var(--muted)] text-sm leading-relaxed">
+                  {post.excerpt}
+                </p>
               </Link>
             ))}
           </div>
         </section>
       )}
-      </div>
+
+      {/* Closing CTA */}
+      <section className="mx-auto max-w-6xl px-5 md:px-8 pb-28">
+        <div className="relative overflow-hidden rounded-2xl bg-[var(--foreground)] text-[var(--hero-ink)] px-8 py-14 md:px-14 md:py-16">
+          <div
+            className="absolute inset-0 opacity-40"
+            style={{
+              background:
+                "radial-gradient(600px 280px at 90% 10%, rgba(15,110,86,0.55), transparent 60%)",
+            }}
+            aria-hidden
+          />
+          <div className="relative max-w-2xl">
+            <h2 className="text-3xl md:text-5xl tracking-tight mb-4">
+              Have a product that needs clearer thinking?
+            </h2>
+            <p className="text-[var(--hero-muted)] mb-8 max-w-lg">
+              I take on a small number of freelance projects—audits, 0→1 product
+              design, and research-led strategy.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center bg-[var(--accent)] text-white px-5 py-3 text-sm font-medium rounded-md hover:bg-[var(--accent-hover)] transition-colors"
+            >
+              Start a conversation
+            </Link>
+          </div>
+        </div>
+      </section>
     </CaseStudyModalWrapper>
   );
 }

@@ -2,211 +2,174 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact - Josh McCray",
-  description: "Get in touch to discuss design projects, collaborations, or opportunities.",
+  title: "Contact — Josh McCray",
+  description:
+    "Get in touch to discuss design projects, collaborations, or opportunities.",
 };
+
+const services = [
+  {
+    title: "UX / Design Audit",
+    price: "$1,500",
+    timing: "2-week turnaround",
+    blurb:
+      "Expert analysis of your product's experience with prioritized, actionable recommendations.",
+    includes: [
+      "Heuristic evaluation",
+      "Usability analysis",
+      "Prioritized recommendations",
+      "1-hour presentation call",
+    ],
+  },
+  {
+    title: "Product Design (0→1)",
+    price: "$8,500",
+    timing: "4–6 week engagement",
+    blurb:
+      "From concept to high-fidelity prototypes—designs ready for development.",
+    includes: [
+      "Discovery & requirements",
+      "Wireframes & user flows",
+      "High-fidelity designs",
+      "Interactive prototypes",
+      "Design system foundations",
+    ],
+  },
+  {
+    title: "UX Research & Strategy",
+    price: "$3,500",
+    timing: "3-week engagement",
+    blurb:
+      "Validate assumptions and guide product decisions before you invest in build.",
+    includes: [
+      "User interviews (5–8)",
+      "Persona development",
+      "Journey mapping",
+      "Strategic recommendations",
+      "Findings presentation",
+    ],
+  },
+];
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-20">
-      <div className="text-center">
-        {/* Hero */}
-        <h1 className="text-4xl font-normal mb-6 tracking-tight">
-          Let's Build Something Together
-        </h1>
-        <p className="text-sm text-gray-600 mb-12 leading-relaxed font-light">
-          I'm always interested in hearing about new projects and opportunities.
-          Whether you have a question or just want to say hi, I'll do my best to get
-          back to you within 24-48 hours.
+    <div className="mx-auto max-w-6xl px-5 md:px-8 py-16 md:py-24">
+      <section className="max-w-2xl mb-16 md:mb-20">
+        <p className="text-xs uppercase tracking-[0.2em] text-[var(--muted)] mb-4">
+          Contact
         </p>
-
-        {/* Email */}
-        <div className="mb-12 p-8 bg-gray-50 rounded-lg border border-gray-200">
-          <p className="text-xs text-gray-600 mb-3 font-light">Email me at</p>
+        <h1 className="text-4xl md:text-6xl tracking-tight mb-6">
+          Let&apos;s build something together
+        </h1>
+        <p className="text-lg text-[var(--muted)] leading-relaxed mb-8">
+          I&apos;m always interested in hearing about new projects and
+          opportunities. Reach out and I&apos;ll get back within 24–48 hours.
+        </p>
+        <a
+          href="mailto:hello@joshmccray.com"
+          className="inline-block font-[family-name:var(--font-syne)] text-2xl md:text-3xl tracking-tight hover:text-[var(--accent)] transition-colors"
+        >
+          hello@joshmccray.com
+        </a>
+        <div className="mt-8 inline-flex items-center gap-2 text-sm text-[var(--muted)]">
+          <span
+            className="h-2 w-2 rounded-full bg-[var(--accent)]"
+            style={{ animation: "pulseDot 2s ease-in-out infinite" }}
+          />
+          Currently available for freelance projects
+        </div>
+        <div className="mt-6 flex gap-5 text-sm text-[var(--muted)]">
           <a
-            href="mailto:hello@joshmccray.com"
-            className="text-lg font-normal hover:text-[var(--accent)] transition-colors block mb-4"
+            href="https://github.com/joshmccray"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[var(--foreground)]"
           >
-            hello@joshmccray.com
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/joshmccray/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[var(--foreground)]"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://x.com/_joshmccray"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[var(--foreground)]"
+          >
+            X
           </a>
         </div>
+      </section>
 
-        {/* Availability Status */}
-        <div className="mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200 rounded-full">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-xs text-green-800 font-normal">
-              Currently available for freelance projects
-            </span>
-          </div>
-        </div>
-
-        {/* Social Links */}
-        <div className="mb-12">
-          <p className="text-xs text-gray-600 mb-4 font-light">
-            Or connect with me on
+      <section className="border-t border-[var(--border)] pt-14 md:pt-16">
+        <div className="max-w-2xl mb-12">
+          <h2 className="text-3xl tracking-tight mb-3">How I can help</h2>
+          <p className="text-[var(--muted)]">
+            Focused engagements designed to move your product forward—whether
+            you&apos;re refining what exists or starting from zero.
           </p>
-          <div className="flex gap-6 justify-center">
-            <a
-              href="https://github.com/joshmccray"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/joshmccray/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://x.com/_joshmccray"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light"
-            >
-              X
-            </a>
-          </div>
         </div>
 
-        {/* Services Section */}
-        <section className="border-t border-gray-200 pt-12 mb-12">
-          <h2 className="text-lg font-normal mb-3 tracking-tight">
-            How I Can Help
-          </h2>
-          <p className="text-xs text-gray-600 mb-12 font-light max-w-2xl mx-auto">
-            Whether you're refining an existing product or building something new,
-            I offer focused engagements designed to move your product forward.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {/* Service 1: UX/Design Audit */}
-            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 text-left">
-              <h3 className="text-sm font-normal mb-2">UX/Design Audit</h3>
-              <p className="text-xs text-gray-600 mb-4 leading-relaxed font-light">
-                Get expert analysis of your product's user experience with actionable
-                recommendations to improve usability and conversion.
+        <div className="grid md:grid-cols-3 gap-10 md:gap-8 mb-14">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="border-t border-[var(--border)] pt-6 flex flex-col"
+            >
+              <h3 className="text-xl tracking-tight mb-2">{service.title}</h3>
+              <p className="text-sm text-[var(--muted)] leading-relaxed mb-5">
+                {service.blurb}
               </p>
-              <div className="mb-4">
-                <p className="text-xs text-gray-600 font-normal mb-2">What's included:</p>
-                <ul className="text-xs text-gray-600 space-y-1 font-light">
-                  <li>• Heuristic evaluation</li>
-                  <li>• Usability analysis</li>
-                  <li>• Prioritized recommendations</li>
-                  <li>• 1-hour presentation call</li>
-                </ul>
-              </div>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <p className="text-2xl font-normal text-gray-900">$1,500</p>
-                <p className="text-xs text-gray-500 font-light">2-week turnaround</p>
+              <ul className="space-y-1.5 text-sm text-[var(--muted)] mb-6 flex-1">
+                {service.includes.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="text-[var(--accent)]">–</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mb-5">
+                <p className="font-[family-name:var(--font-syne)] text-3xl tracking-tight">
+                  {service.price}
+                </p>
+                <p className="text-xs text-[var(--muted)] mt-1">
+                  {service.timing}
+                </p>
               </div>
               <a
-                href="mailto:hello@joshmccray.com"
-                className="block w-full text-center bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 font-normal"
+                href="mailto:hello@joshmccray.com?subject=Inquiry:%20"
+                className="inline-flex items-center justify-center bg-[var(--accent)] text-white px-4 py-2.5 text-sm font-medium rounded-md hover:bg-[var(--accent-hover)] transition-colors"
               >
-                Get Started
+                Get started
               </a>
             </div>
-
-            {/* Service 2: Product Design (0-1) */}
-            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 text-left">
-              <h3 className="text-sm font-normal mb-2">Product Design (0-1)</h3>
-              <p className="text-xs text-gray-600 mb-4 leading-relaxed font-light">
-                Transform your product idea into polished, user-tested designs ready
-                for development. From concept to high-fidelity prototypes.
-              </p>
-              <div className="mb-4">
-                <p className="text-xs text-gray-600 font-normal mb-2">What's included:</p>
-                <ul className="text-xs text-gray-600 space-y-1 font-light">
-                  <li>• Discovery & requirements</li>
-                  <li>• Wireframes & user flows</li>
-                  <li>• High-fidelity designs</li>
-                  <li>• Interactive prototypes</li>
-                  <li>• Design system foundations</li>
-                </ul>
-              </div>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <p className="text-2xl font-normal text-gray-900">$8,500</p>
-                <p className="text-xs text-gray-500 font-light">4-6 week engagement</p>
-              </div>
-              <a
-                href="mailto:hello@joshmccray.com"
-                className="block w-full text-center bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 font-normal"
-              >
-                Get Started
-              </a>
-            </div>
-
-            {/* Service 3: UX Research & Strategy */}
-            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 text-left">
-              <h3 className="text-sm font-normal mb-2">UX Research & Strategy</h3>
-              <p className="text-xs text-gray-600 mb-4 leading-relaxed font-light">
-                Validate assumptions and guide product decisions with user research.
-                Understand your users deeply before investing in design and development.
-              </p>
-              <div className="mb-4">
-                <p className="text-xs text-gray-600 font-normal mb-2">What's included:</p>
-                <ul className="text-xs text-gray-600 space-y-1 font-light">
-                  <li>• User interviews (5-8)</li>
-                  <li>• Persona development</li>
-                  <li>• Journey mapping</li>
-                  <li>• Strategic recommendations</li>
-                  <li>• Findings presentation</li>
-                </ul>
-              </div>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <p className="text-2xl font-normal text-gray-900">$3,500</p>
-                <p className="text-xs text-gray-500 font-light">3-week engagement</p>
-              </div>
-              <a
-                href="mailto:hello@joshmccray.com"
-                className="block w-full text-center bg-[var(--accent)] text-white px-4 py-2 text-xs rounded-lg hover:bg-[var(--accent-hover)] transition-all duration-200 font-normal"
-              >
-                Get Started
-              </a>
-            </div>
-          </div>
-
-          {/* Additional Options */}
-          <div className="pt-6 border-t border-gray-200">
-            <p className="text-xs text-gray-600 mb-4 font-light">
-              Need something different? I also offer design system optimization,
-              ongoing consultation retainers, and custom engagements.
-            </p>
-            <div className="flex gap-3 justify-center flex-wrap">
-              <a
-                href="mailto:hello@joshmccray.com"
-                className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
-              >
-                Discuss Custom Project
-              </a>
-              {/*
-              <a
-                href="/resume.pdf"
-                download
-                className="border border-gray-300 px-4 py-2 text-xs rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-normal"
-              >
-                Download Resume
-              </a>
-              */}
-            </div>
-          </div>
-        </section>
-
-        {/* Back to work link */}
-        <div className="pt-12 border-t border-gray-200">
-          <Link
-            href="/case-studies"
-            className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors font-light"
-          >
-            ← Back to Case Studies
-          </Link>
+          ))}
         </div>
+
+        <p className="text-sm text-[var(--muted)] mb-4">
+          Need something different? Design systems, retainers, and custom
+          engagements are available too.
+        </p>
+        <a
+          href="mailto:hello@joshmccray.com"
+          className="text-sm text-[var(--accent)] hover:underline"
+        >
+          Discuss a custom project →
+        </a>
+      </section>
+
+      <div className="pt-16 mt-8 border-t border-[var(--border)]">
+        <Link
+          href="/case-studies"
+          className="text-sm text-[var(--muted)] hover:text-[var(--accent)]"
+        >
+          ← Back to case studies
+        </Link>
       </div>
     </div>
   );

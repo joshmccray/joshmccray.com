@@ -72,7 +72,7 @@ export function CaseStudyDrawerClient({ caseStudy, onClose, previous, next }: Ca
       aria-labelledby="drawer-title"
     >
       <div
-        className="relative h-[95vh] w-full bg-white rounded-t-2xl shadow-2xl"
+        className="relative h-[95vh] w-full bg-[var(--background)] rounded-t-2xl shadow-2xl"
         style={
           isClosing
             ? {
@@ -86,7 +86,7 @@ export function CaseStudyDrawerClient({ caseStudy, onClose, previous, next }: Ca
         {/* Close button */}
         <button
           onClick={handleClose}
-          className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-colors hover:bg-gray-200 hover:text-gray-900"
+          className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/80 text-[var(--muted)] transition-colors hover:bg-white hover:text-[var(--foreground)] border border-[var(--border)]"
           aria-label="Close drawer"
         >
           <svg
