@@ -41,7 +41,7 @@ const experience = [
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-6xl px-5 md:px-8 py-16 md:py-24">
+    <div className="mx-auto max-w-5xl px-5 md:px-6 py-14 md:py-20">
       <section className="grid md:grid-cols-[auto_1fr] gap-10 md:gap-16 items-start mb-20 md:mb-28">
         <Image
           src="/pfp.webp"
@@ -52,10 +52,8 @@ export default function AboutPage() {
           priority
         />
         <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-[var(--muted)] mb-4">
-            About
-          </p>
-          <h1 className="text-4xl md:text-6xl tracking-tight mb-5">
+          <p className="text-sm text-[var(--muted)] mb-3">About</p>
+          <h1 className="text-4xl md:text-5xl tracking-tight mb-5">
             Josh McCray
           </h1>
           <p className="text-lg text-[var(--muted)] mb-2">

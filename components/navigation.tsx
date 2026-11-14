@@ -7,15 +7,14 @@ import { usePathname } from "next/navigation";
 const links = [
   { href: "/case-studies", label: "Work" },
   { href: "/about", label: "About" },
-  { href: "/blog", label: "Writing" },
-  { href: "/shuffle", label: "Shuffle" },
+  { href: "/blog", label: "Notes" },
+  { href: "/shuffle", label: "Desk" },
   { href: "/contact", label: "Contact" },
 ];
 
 export function Navigation() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isHome = pathname === "/";
 
   const isActive = (path: string) => {
     if (path === "/") return pathname === "/";
@@ -25,22 +24,16 @@ export function Navigation() {
   const handleLinkClick = () => setIsMenuOpen(false);
 
   return (
-    <nav
-      className={`sticky top-0 z-50 transition-colors ${
-        isHome
-          ? "bg-[var(--background)]/70 backdrop-blur-md border-b border-transparent"
-          : "bg-[var(--background)]/85 backdrop-blur-md border-b border-[var(--border)]"
-      }`}
-    >
-      <div className="mx-auto max-w-6xl px-5 md:px-8 py-4">
+    <nav className="sticky top-0 z-50 bg-[var(--background)]/85 backdrop-blur-md border-b border-[var(--border)]">
+      <div className="mx-auto max-w-5xl px-5 md:px-6 py-4">
         <div className="flex items-center justify-between gap-6">
           <Link href="/" className="group min-w-0" onClick={handleLinkClick}>
-            <span className="font-[family-name:var(--font-syne)] text-lg font-bold tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
+            <span className="font-[family-name:var(--font-display)] text-xl tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
               Josh McCray
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             {links.map((link) => (
               <Link
                 key={link.href}
@@ -88,7 +81,7 @@ export function Navigation() {
           className="md:hidden border-t border-[var(--border)] bg-[var(--background)] overflow-hidden"
           style={{ animation: "slideDown 300ms ease-out forwards" }}
         >
-          <div className="mx-auto max-w-6xl px-5 py-3 flex flex-col">
+          <div className="mx-auto max-w-5xl px-5 py-3 flex flex-col">
             {links.map((link, index) => (
               <Link
                 key={link.href}

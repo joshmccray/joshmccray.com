@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
-import { Outfit, Syne } from "next/font/google";
+import { Fraunces, Outfit } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 
 const outfit = Outfit({
-  variable: "--font-outfit",
+  variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const fraunces = Fraunces({
+  variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: "Josh McCray — Product Designer",
   description:
-    "Senior product designer shaping digital experiences across nonprofit, e-commerce, and early-stage products.",
+    "Product designer shaping digital experiences across nonprofit, e-commerce, and early-stage products. Based near Chicago.",
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} ${syne.variable} antialiased flex flex-col min-h-screen`}
+        className={`${outfit.variable} ${fraunces.variable} antialiased flex flex-col min-h-screen`}
       >
         <a
           href="#main-content"

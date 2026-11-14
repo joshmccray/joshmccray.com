@@ -3,28 +3,22 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-[var(--border)]">
-      <div className="mx-auto max-w-6xl px-5 md:px-8 py-14">
-        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-md">
-            <p className="font-[family-name:var(--font-syne)] text-2xl tracking-tight mb-3">
-              Let&apos;s make something worth shipping.
-            </p>
+      <div className="mx-auto max-w-5xl px-5 md:px-6 py-12">
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+          <div>
             <a
               href="mailto:hello@joshmccray.com"
-              className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
+              className="font-[family-name:var(--font-display)] text-xl tracking-tight hover:text-[var(--accent)] transition-colors"
             >
               hello@joshmccray.com
             </a>
+            <p className="mt-3 text-sm text-[var(--muted)] max-w-sm">
+              This site is a working shelf of projects, experiments, and notes.
+              It changes as I do.
+            </p>
           </div>
 
-          <div className="flex flex-col items-start gap-4 md:items-end">
-            <div className="inline-flex items-center gap-2 text-sm text-[var(--muted)]">
-              <span
-                className="h-2 w-2 rounded-full bg-[var(--accent)]"
-                style={{ animation: "pulseDot 2s ease-in-out infinite" }}
-              />
-              Available for select freelance
-            </div>
+          <div className="flex flex-col gap-3 sm:items-end">
             <div className="flex gap-5 text-sm text-[var(--muted)]">
               <a
                 href="https://github.com/joshmccray"

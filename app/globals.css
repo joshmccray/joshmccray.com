@@ -1,17 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #eef1f5;
-  --foreground: #0b1220;
-  --muted: #5b6578;
+  --background: #f3f4f7;
+  --foreground: #14171f;
+  --muted: #5c6575;
   --surface: #ffffff;
+  --surface-2: #e7e9ef;
   --accent: #0f6e56;
   --accent-hover: #0b5744;
   --accent-soft: rgba(15, 110, 86, 0.1);
-  --border: rgba(11, 18, 32, 0.1);
-  --hero-ink: #f4f7fb;
-  --hero-muted: rgba(244, 247, 251, 0.72);
-  --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  --border: rgba(20, 23, 31, 0.1);
+  --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
 }
 
 @theme inline {
@@ -19,27 +18,26 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-accent-soft: var(--accent-soft);
   --color-border: var(--border);
-  --font-sans: var(--font-outfit);
-  --font-display: var(--font-syne);
-  --font-mono: var(--font-outfit);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-body);
 
   --color-gray-50: #f7f8fa;
-  --color-gray-100: #eef1f5;
-  --color-gray-200: #dde3eb;
-  --color-gray-300: #c4ccd8;
-  --color-gray-400: #8b95a8;
-  --color-gray-500: #5b6578;
+  --color-gray-100: #f3f4f7;
+  --color-gray-200: #e7e9ef;
+  --color-gray-300: #cfd4de;
+  --color-gray-400: #9aa3b2;
+  --color-gray-500: #5c6575;
   --color-gray-600: #3f4758;
   --color-gray-700: #2a3140;
-  --color-gray-800: #171d2a;
-  --color-gray-900: #0b1220;
-  --color-gray-950: #060911;
-
-  --animate-marquee: marquee 60s linear infinite;
+  --color-gray-800: #1a1f2b;
+  --color-gray-900: #14171f;
+  --color-gray-950: #0a0c11;
 }
 
 html {
@@ -48,12 +46,9 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(1200px 600px at 12% -10%, rgba(15, 110, 86, 0.08), transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, rgba(35, 68, 140, 0.07), transparent 50%),
-    var(--background);
+  background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-outfit), system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
@@ -66,9 +61,9 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 100;
-  opacity: 0.035;
+  opacity: 0.028;
   background-image: var(--grain);
-  background-size: 180px 180px;
+  background-size: 160px 160px;
   mix-blend-mode: multiply;
 }
 
@@ -78,10 +73,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-syne), system-ui, sans-serif;
-  font-weight: 600;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 a {
@@ -167,22 +162,11 @@ a {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(1.04);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 
@@ -193,27 +177,18 @@ a {
   }
   to {
     opacity: 0;
-    transform: scale(0.95) translateY(8px);
+    transform: scale(0.97) translateY(6px);
   }
 }
 
 @keyframes shuffleIn {
   from {
     opacity: 0;
-    transform: scale(0.95) translateY(-8px);
+    transform: scale(0.97) translateY(-6px);
   }
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
   }
 }
 
@@ -224,33 +199,45 @@ a {
     transform: scale(1);
   }
   50% {
-    opacity: 0.55;
+    opacity: 0.5;
     transform: scale(0.85);
   }
 }
 
 .reveal {
-  animation: fadeInUp 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fadeInUp 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .reveal-delay-1 {
-  animation-delay: 120ms;
+  animation-delay: 80ms;
 }
 
 .reveal-delay-2 {
-  animation-delay: 240ms;
+  animation-delay: 160ms;
 }
 
 .reveal-delay-3 {
-  animation-delay: 360ms;
+  animation-delay: 240ms;
 }
 
-.hero-media {
-  animation: fadeInScale 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+.tile {
+  background: transparent;
 }
 
-.work-row {
-  transition: opacity 0.35s ease;
+.tile-link {
+  transition: opacity 0.25s ease;
+}
+
+.tile-link:hover {
+  opacity: 0.92;
+}
+
+.tile-link:hover .tile-image {
+  transform: scale(1.03);
+}
+
+.tile-image {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .work-row:hover .work-image {

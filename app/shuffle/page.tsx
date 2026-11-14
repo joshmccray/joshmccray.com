@@ -26,13 +26,11 @@ export default function ShufflePage() {
   };
 
   return (
-    <div className="mx-auto max-w-6xl px-5 md:px-8 py-16 md:py-24">
-      <div className="max-w-2xl mb-14 md:mb-16">
-        <p className="text-xs uppercase tracking-[0.2em] text-[var(--muted)] mb-4">
-          Archive
-        </p>
-        <h1 className="text-4xl md:text-6xl tracking-tight mb-5">Shuffle</h1>
-        <p className="text-lg text-[var(--muted)] leading-relaxed">
+    <div className="mx-auto max-w-5xl px-5 md:px-6 py-14 md:py-20">
+      <div className="max-w-2xl mb-12 md:mb-14">
+        <p className="text-sm text-[var(--muted)] mb-3">Desk drawer</p>
+        <h1 className="text-4xl md:text-5xl tracking-tight mb-5">Shuffle</h1>
+        <p className="text-[var(--muted)] leading-relaxed">
           A random walk through logos, screenshots, illustrations, and other
           design artifacts. Hit shuffle to see what comes up.
         </p>

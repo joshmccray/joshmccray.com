@@ -12,13 +12,11 @@ export default function BlogPage() {
   const posts = getAllBlogPosts();
 
   return (
-    <div className="mx-auto max-w-6xl px-5 md:px-8 py-16 md:py-24">
-      <section className="max-w-2xl mb-16 md:mb-20">
-        <p className="text-xs uppercase tracking-[0.2em] text-[var(--muted)] mb-4">
-          Writing
-        </p>
-        <h1 className="text-4xl md:text-6xl tracking-tight mb-6">Blog</h1>
-        <p className="text-lg text-[var(--muted)] leading-relaxed">
+    <div className="mx-auto max-w-5xl px-5 md:px-6 py-14 md:py-20">
+      <section className="max-w-2xl mb-12 md:mb-16">
+        <p className="text-sm text-[var(--muted)] mb-3">Notes</p>
+        <h1 className="text-4xl md:text-5xl tracking-tight mb-5">Writing</h1>
+        <p className="text-[var(--muted)] leading-relaxed">
           Thoughts on product design, development, and the creative process.
         </p>
       </section>
